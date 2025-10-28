@@ -1,8 +1,15 @@
-// Efecto suave al hacer clic en los enlaces del menú
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function(e) {
-    e.preventDefault();
-    document.querySelector(this.getAttribute('href'))
-      .scrollIntoView({ behavior: 'smooth' });
+// Animaciones al hacer scroll para otras secciones
+const animatedElements = document.querySelectorAll('.fade-up, .fade-in');
+
+// Eliminamos del hero para que cargue instantáneo
+const filteredElements = Array.from(animatedElements).filter(el => !el.closest('.hero'));
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
   });
 });
+
+filteredElements.forEach(el => observer.observe(el));

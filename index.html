@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Servicios Tecnológicos - DavCode Solutions</title>
+  <title>DavCode Solutions - Innovación y Desarrollo Tecnológico</title>
   <link rel="stylesheet" href="css/style.css" />
   <script defer src="js/script.js"></script>
 </head>
@@ -12,62 +12,87 @@
   <!-- 🔹 HEADER -->
   <header class="header">
     <nav class="navbar">
-      <div class="logo">DavCode Solutions</div>
+      <div class="logo">DavCode <span>Solutions</span></div>
       <ul class="nav-links">
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="sobre-mi.html" target="_blank">Sobre mí</a></li>
-        <li><a href="contacto.html" target="_blank">Contacto</a></li>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="sobre-mi.html" >Sobre mí</a></li>
+        <li><a href="contacto.html" >Contacto</a></li>
       </ul>
     </nav>
   </header>
 
   <!-- 🔹 HERO -->
   <section id="inicio" class="hero">
-    <div class="hero-content">
-      <h1>Impulsa tu negocio con soluciones tecnológicas a medida.</h1>
-      <p>Software de gestión (Ades), aplicaciones listas para usar y desarrollo web personalizado que transforman tus ideas en resultados reales</p>
-      <a href="contacto.html" target="_blank" class="btn">Contáctame</a>
+    <div class="hero-overlay"></div>
+    <div class="hero-content fade-in">
+      <h1 class="slide-down">Impulsa tu negocio con soluciones tecnológicas a medida</h1>
+      <p class="fade-in-delay">Transformamos tus ideas en resultados reales con software de gestión, aplicaciones y desarrollo web personalizado.</p>
+      <a href="contacto.html" class="btn pulse">Contáctame</a>
     </div>
   </section>
 
   <!-- 🔹 SERVICIOS -->
   <section id="servicios" class="servicios">
-    <h2>Servicios</h2>
+    <h2 class="section-title">Servicios</h2>
     <div class="servicios-container">
-      <div class="servicio">
-        <a href="software.html" target="_blank" style="text-decoration: none; color: inherit;">
-          <img src="img/servicios.jpg" alt="Software de despachos" />
+      <div class="servicio fade-up">
+        <a href="web.html" style="text-decoration: none; color: inherit;">
+          <img src="img/servicios.jpg" alt="Desarrollo de Páginas Web a tu Medida" />
           <h3>Desarrollo de Páginas Web a tu Medida</h3>
-          <p>Tu Página Web, tu Identidad Digital, en Ades Software transformamos tus ideas en presencia online. Creamos páginas rápidas, seguras y funcionales para impulsar tu marca en internet.</p>
+          <p>Transformamos tus ideas en presencia online con sitios web rápidos, seguros y funcionales que impulsan tu marca en internet.</p>
         </a>
       </div>
-      <div class="servicio">
-        <a href="aplicaciones.html" target="_blank" style="text-decoration: none; color: inherit;">
+      <div class="servicio fade-up delay-1">
+        <a href="aplicaciones.html" style="text-decoration: none; color: inherit;">
           <img src="img/microsoft.jpg" alt="Aplicaciones Disponibles" />
-          <h3>Aplicaciones disponibles</h3>
-          <p>Aplicaciones disponibles para entrega inmediata, diseñadas para resolver tus necesidades de manera eficaz y a un precio competitivo. Soluciones rápidas y confiables que impulsan tu negocio al siguiente nivel.</p>
+          <h3>Aplicaciones Disponibles</h3>
+          <p>Soluciones listas para usar, diseñadas para resolver tus necesidades de manera eficaz y a un precio competitivo.</p>
         </a>
       </div>
-      <div class="servicio">
-        <a href="web.html" target="_blank" style="text-decoration: none; color: inherit;">
-          <img src="img/desarrollo.jpg" alt="Desarrollo web y apps" />
-          <h3>Desarrollo de aplicaciones personalizadas para web, móvil y escritorio</h3>
-          <p>Creo soluciones personalizadas y eficientes que optimizan tus procesos y mejoran la experiencia de tus usuarios, adaptadas a las necesidades específicas de tu negocio.</p>
+      <div class="servicio fade-up delay-2">
+        <a href="desarrollo.html" style="text-decoration: none; color: inherit;">
+          <img src="img/desarrollo.jpg" alt="Desarrollo de aplicaciones personalizadas" />
+          <h3>Desarrollo de Aplicaciones Personalizadas</h3>
+          <p>Creamos soluciones adaptadas a las necesidades específicas de tu negocio, mejorando procesos y experiencia de usuario.</p>
         </a>
       </div>
     </div>
   </section>
+  <!-- ===== TECNOLOGÍAS ===== -->
+<section class="tecnologias" id="tecnologias">
+  <h2>Tecnologías que usamos</h2>
+  <p>En DavCode Solutions desarrollamos con las mejores herramientas del mercado, adaptadas a cada tipo de proyecto.</p>
 
+  <div class="tecnologias-container">
 
-  <!-- 🔹 CONTACTO -->
-  <section id="contacto" class="contacto">
-    <h2></h2>
-    <p>¿Listo para trabajar juntos? Escríbeme y hagamos realidad tu proyecto.</p>
-    <div>
+    <a href="node.html" class="tech-card">
+      <img src="img/nodejs.png" alt="Node.js Logo">
+      <h3>Node.js</h3>
+    </a>
+
+    <a href="react.html" class="tech-card">
+      <img src="img/react.png" alt="React Logo">
+      <h3>React</h3>
+    </a>
+
+    <a href="django.html" class="tech-card">
+      <img src="img/django.png" alt="Django Logo">
+      <h3>Django</h3>
+    </a>
+
+    <a href="vaadin.html" class="tech-card">
+      <img src="img/javafx.png" alt="Vaadin Logo">
+      <h3>Java + JavaFX (Escritorio) </h3>
+    </a>
+
+  </div>
+</section>
+
 
   <!-- 🔹 FOOTER -->
   <footer class="footer">
     <p>© 2025 DavCode Solutions. Todos los derechos reservados.</p>
   </footer>
+
 </body>
 </html>
