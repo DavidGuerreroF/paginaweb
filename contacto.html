@@ -3,121 +3,202 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contacto - DavCode Solutions</title>
+  <title>Contáctanos - DavCode Solutions</title>
+  <link rel="icon" href="img/favicon.png" type="image/x-icon">
   <link rel="stylesheet" href="css/style.css" />
   <style>
+    /* ===== ESTILOS CONTACTO ===== */
+    body {
+      background: linear-gradient(135deg, #0d1117, #1a1f24);
+      color: #eee;
+      font-family: 'Poppins', sans-serif;
+    }
+
     main {
-      padding: 100px 40px;
-      max-width: 700px;
+      padding: 120px 40px;
+      max-width: 750px;
       margin: auto;
       text-align: center;
-      font-family: 'Segoe UI', sans-serif;
-      color: #333;
     }
 
     .contacto-container {
-      background: #f8fdfd;
-      border-radius: 20px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.1);
-      padding: 40px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 25px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+      padding: 50px 40px;
+      backdrop-filter: blur(10px);
+      transition: transform 0.3s ease;
+    }
+
+    .contacto-container:hover {
+      transform: translateY(-5px);
     }
 
     .contacto-container img {
-      width: 140px;
+      width: 130px;
+      height: 130px;
       border-radius: 50%;
-      margin-bottom: 20px;
-      border: 3px solid #00bfa6;
+      margin-bottom: 25px;
+      border: 3px solid #00bcd4;
+      box-shadow: 0 0 15px rgba(0, 188, 212, 0.4);
     }
 
     h1 {
-      color: #00bfa6;
-      font-size: 2rem;
-      margin-bottom: 10px;
+      color: #00e5ff;
+      font-size: 1.9rem;
+      margin-bottom: 15px;
+      line-height: 1.4;
     }
 
     p {
-      line-height: 1.6;
-      font-size: 1.1rem;
+      line-height: 1.7;
+      font-size: 1.05rem;
+      color: #ddd;
+      margin-bottom: 15px;
+    }
+
+    strong {
+      color: #00bcd4;
     }
 
     .contact-buttons {
-      margin-top: 30px;
+      margin-top: 35px;
       display: flex;
       justify-content: center;
-      gap: 20px;
+      gap: 25px;
       flex-wrap: wrap;
     }
 
     .btn-contact {
       display: flex;
       align-items: center;
-      gap: 10px;
-      background: #00bfa6;
+      gap: 12px;
+      background: #00bcd4;
       color: #fff;
       text-decoration: none;
-      padding: 12px 25px;
-      border-radius: 30px;
-      transition: 0.3s;
+      padding: 12px 28px;
+      border-radius: 50px;
       font-weight: 600;
+      font-size: 1rem;
+      letter-spacing: 0.5px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 188, 212, 0.4);
     }
 
     .btn-contact:hover {
-      background: #009f8b;
-      transform: scale(1.05);
+      background: #00e5ff;
+      transform: scale(1.07);
+      box-shadow: 0 6px 20px rgba(0, 229, 255, 0.5);
     }
 
     .btn-contact img {
-      width: 24px;
-      height: 24px;
+      width: 26px;
+      height: 26px;
+      filter: brightness(0) invert(1);
     }
 
     .frase {
-      margin-top: 30px;
+      margin-top: 40px;
       font-style: italic;
-      color: #555;
+      color: #bbb;
+      font-size: 1.1rem;
     }
 
+    .extra {
+      margin-top: 10px;
+      color: #ccc;
+    }
+
+    /* ===== NAVBAR (AJUSTE DE COLORES) ===== */
+    .header {
+      background: rgba(0, 0, 0, 0.9);
+      backdrop-filter: blur(10px);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 100;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1em 3em;
+    }
+
+    .logo {
+      color: #00e5ff;
+      font-size: 1.4em;
+      font-weight: bold;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.5em;
+    }
+
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      transition: color 0.3s;
+      font-weight: 500;
+    }
+
+    .nav-links a:hover {
+      color: #00e5ff;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      main {
+        padding: 100px 20px;
+      }
+      h1 {
+        font-size: 1.6rem;
+      }
+      .contacto-container {
+        padding: 35px 25px;
+      }
+    }
   </style>
 </head>
 
 <body>
+  <!-- HEADER -->
   <header class="header">
     <nav class="navbar">
-      <div class="logo">DaveCode Solutions</div>
+      <div class="logo">DavCode <span style="color:white;">Solutions</span></div>
       <ul class="nav-links">
         <li><a href="index.html">Inicio</a></li>
       </ul>
     </nav>
   </header>
 
+  <!-- CONTENIDO PRINCIPAL -->
   <main>
-    <div class="contacto-container">
-      <img src="img/perfil.jpg" alt="Foto de Brayan David Guerrero" />
-      <h1>Estás a solo unos pasos de hacer crecer tu negocio con soluciones de software profesionales y a precios accesibles </h1>
-      <p><strong>Hola! Mi nombre es David Guerrero un desarrollador de software</strong> con pasión por la innovación y la mejora continua.</p>
-      <p>
-        y mi objetivo es ayudarte a transformar tu negocio con tecnología moderna y soluciones prácticas.  
-        Desarrollando software a la medida, páginas web y herramientas que impulsen tu productividad.
-      </p>
-      <p>
-        Si deseas adquirir mis servicios o recibir asesoría personalizada, contáctame directamente:
-      </p>
+    <div class="contacto-container fade-in">
+      <img src="img/perfil.jpg" alt="Foto de David Guerrero - CEO DavCode Solutions" />
+      <h1>Hagamos crecer tu negocio con tecnología que marque la diferencia 🚀</h1>
+      <p><strong>¡Hola!, </strong>mi nombre es David Guerrero fundador y desarrollador de software en <strong>DavCode Solutions</strong>. Mi equipo y yo ayudamos a empresas, emprendedores y profesionales independientes a llevar sus ideas al entorno digital,
+        creando soluciones que impulsan su crecimiento.
+       </p>
+
+     <p>🚀 ¿Listo para impulsar tu negocio o proyecto con tecnología moderna y eficiente?
+      Contáctame directamente y construyamos juntos la solución que necesitas.</p>
 
       <div class="contact-buttons">
         <a href="https://wa.me/573107864885" target="_blank" class="btn-contact">
           <img src="img/whatsapp.png" alt="WhatsApp" /> WhatsApp
         </a>
         <a href="mailto:brayan8412@gmail.com" class="btn-contact">
-          <img src="img/email.png" alt="Correo electrónico" /> Correo
+          <img src="img/email.png" alt="Correo electrónico" /> Enviar Correo
         </a>
       </div>
 
-      <p class="frase">
-        💡 “No vendo software, construyo soluciones que hacen crecer tu negocio.”
-      </p>
-      <p style="margin-top:10px;">
-        🚀 Puedo acercarme a tu negocio, entender tus necesidades y crecer juntos.
-      </p>
+      <p class="frase">💡 “No vendo software, creo soluciones que hacen crecer tu negocio.”</p>
+      <p class="extra">📍 Antes de tu compra, agendaremos una reunión personal, recibirás una demo para confirmar tu decisión y formalizaremos el acuerdo de manera segura.</p>
     </div>
   </main>
 </body>

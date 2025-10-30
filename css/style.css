@@ -294,3 +294,119 @@ body {
   background: #0097a7;
   transform: scale(1.05);
 }
+/* ===== CHATBOT ===== */
+.chat-toggle {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background-color: #111;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 28px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: transform 0.2s ease;
+  z-index: 1000;
+}
+
+.chat-toggle:hover {
+  transform: scale(1.1);
+}
+
+/* Ventana del chatbot */
+.chatbot-container {
+  display: none;
+  position: fixed;
+  bottom: 100px;
+  right: 30px;
+  width: 300px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  overflow: hidden;
+  z-index: 999;
+  animation: fadeIn 0.3s ease;
+}
+
+.chatbot-header {
+  background: #111;
+  color: #fff;
+  padding: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chatbot-header h3 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.chatbot-body {
+  padding: 10px;
+  max-height: 300px;
+  overflow-y: auto;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+}
+
+.bot-text {
+  background: #f1f1f1;
+  padding: 8px 12px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.option-btn {
+  display: block;
+  width: 100%;
+  margin: 5px 0;
+  padding: 8px;
+  border: none;
+  border-radius: 8px;
+  background-color: #111;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.option-btn:hover {
+  background-color: #333;
+}
+
+.user-text {
+  text-align: right;
+  background: #dcf8c6;
+  padding: 8px 12px;
+  border-radius: 10px;
+  margin: 8px 0;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== BOTÓN WHATSAPP ===== */
+.whatsapp-float {
+  position: fixed;
+  bottom: 25px;          /* posición vertical (ajústala si se cruza con el chat) */
+  right: 100px;          /* un poco a la izquierda del chat 💬 */
+  z-index: 1000;
+  transition: transform 0.2s ease;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+}
+
+.whatsapp-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+

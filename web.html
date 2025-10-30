@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Catálogo de Páginas Web - DavCode Solutions</title>
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="img/favicon.png" type="image/x-icon">
   <style>
     body {
       font-family: "Poppins", sans-serif;
@@ -73,8 +74,9 @@
 
     .catalogo {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Ajuste de columnas */
       gap: 30px;
+      justify-content: center; /* Centra el contenido en pantallas más grandes */
     }
 
     .servicio {
@@ -83,6 +85,9 @@
       box-shadow: 0 2px 10px rgba(0,0,0,0.1);
       overflow: hidden;
       transition: transform 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
     }
 
     .servicio:hover {
@@ -105,6 +110,7 @@
       font-size: 0.95rem;
       color: #555;
       text-align: justify;
+      flex-grow: 1; /* Hace que el contenido se distribuya de manera más eficiente */
     }
 
     .etiquetas {
@@ -128,6 +134,20 @@
 
     .btn:hover {
       background-color: #17a689;
+    }
+
+    /* Añadir espacio entre las tarjetas en pantallas más pequeñas */
+    @media (max-width: 768px) {
+      .catalogo {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    /* En pantallas más pequeñas, tener una columna única */
+    @media (max-width: 480px) {
+      .catalogo {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -158,36 +178,37 @@
           <br><br><strong>Tecnologías:</strong> HTML, CSS, JavaScript  
           <br><strong>Base de Datos:</strong> No requerida
         </p>
-        <div class="etiquetas">#Corporativo #HTML #Responsive</div>
-        <a href="#" class="btn">Cotizar</a>
+        <div class="etiquetas">#JS #HTML #CSS</div>
+        <a href="https://wa.me/573107864885" target="_blank" class="btn">Cotizar</a>
       </div>
 
       <!-- Tienda en Línea -->
       <div class="servicio">
         <img src="img/tienda.jpg" alt="Tienda en Línea">
-        <h3>Tienda en Línea / e-commerce</h3>
+        <h3>Tienda en Línea Profesional / E-commerce</h3>
         <p>
-          Plataforma para ventas online con carrito de compras, gestión de productos y pasarela de pagos. 
-          Diseñada para pymes y negocios que buscan vender de forma profesional.
-          <br><br><strong>Tecnologías:</strong> JavaScript, Node.js, Supabase  
-          <br><strong>Base de Datos:</strong> Sí
+          Impulsa tu negocio al siguiente nivel con una plataforma de ventas en línea optimizada y fácil de usar. Nuestra solución de **e-commerce** incluye un sistema completo con carrito de compras, gestión de productos, y un sistema de apartado de productos que permite a tus clientes comprar de manera eficiente y segura.
+          <br><br>
+          Ya sea que estés comenzando o busques mejorar tu tienda actual, ofrecemos una **plataforma profesional** diseñada para maximizar tus ventas y facilitar la gestión de tu negocio.
+          <br><br><strong>Tecnologías:</strong> JavaScript, Laravel, Base de Datos PostgreSQL
+          <br><strong>Base de Datos:</strong> PostgreSQL, diseñada para alta disponibilidad y escalabilidad.
         </p>
-        <div class="etiquetas">#Ecommerce #NodeJS #Supabase</div>
-        <a href="#" class="btn">Cotizar</a>
+        <div class="etiquetas">#Ecommerce #Laravel #PostgreSQL #VentasOnline #NegociosDigitales</div>
+        <a href="https://wa.me/573107864885" target="_blank" class="btn">Cotizar</a>
       </div>
 
       <!-- Web con Panel Administrativo -->
       <div class="servicio">
-        <img src="img/web-admin.jpg" alt="Web con Panel Administrativo">
+        <img src="img/webadmin.jpg" alt="Web con Panel Administrativo">
         <h3>Web con Panel Administrativo</h3>
         <p>
           Aplicación web para empresas que requieren gestión interna de datos, usuarios y reportes. 
           Incluye autenticación y panel seguro para administrar toda la información.
-          <br><br><strong>Tecnologías:</strong> Html, JavaScritp,PHP, JavaScript  
+          <br><br><strong>Tecnologías:</strong> HTML, JavaScript, PHP  
           <br><strong>Base de Datos:</strong> PostgreSQL
         </p>
         <div class="etiquetas">#Django #AdminPanel #DataDriven</div>
-        <a href="#" class="btn">Cotizar</a>
+        <a href="https://wa.me/573107864885" target="_blank" class="btn">Cotizar</a>
       </div>
     </div>
 

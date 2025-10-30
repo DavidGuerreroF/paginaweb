@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="img/favicon.png" type="image/x-icon">
   <title>DavCode Solutions - Innovación y Desarrollo Tecnológico</title>
   <link rel="stylesheet" href="css/style.css" />
   <script defer src="js/script.js"></script>
@@ -15,7 +16,7 @@
       <div class="logo">DavCode <span>Solutions</span></div>
       <ul class="nav-links">
         <li><a href="#inicio">Inicio</a></li>
-        <li><a href="sobre-mi.html" >Sobre mí</a></li>
+        <li><a href="sobre-mi.html" >Sobre nosotros</a></li>
         <li><a href="contacto.html" >Contacto</a></li>
       </ul>
     </nav>
@@ -65,25 +66,29 @@
 
   <div class="tecnologias-container">
 
-    <a href="node.html" class="tech-card">
-      <img src="img/nodejs.png" alt="Node.js Logo">
-      <h3>Node.js</h3>
-    </a>
+<div class="tech-card">
+  <img src="img/nodejs.png" alt="Node.js Logo">
+  <h3>Node.js (Desarrollo Web)</h3>
+  <p>Plataforma robusta para el desarrollo de aplicaciones web rápidas y escalables con JavaScript en el servidor.</p>
+</div>
 
-    <a href="react.html" class="tech-card">
-      <img src="img/react.png" alt="React Logo">
-      <h3>React</h3>
-    </a>
+<div class="tech-card">
+  <img src="img/react.png" alt="React Logo">
+  <h3>React (Frontend Web)</h3>
+  <p>Biblioteca de JavaScript para crear interfaces de usuario dinámicas y reactivas, ideales para aplicaciones web modernas.</p>
+</div>
 
-    <a href="django.html" class="tech-card">
-      <img src="img/django.png" alt="Django Logo">
-      <h3>Django</h3>
-    </a>
+<div  class="tech-card">
+  <img src="img/laravel.png" alt="Laravel Logo">
+  <h3>Laravel (Desarrollo E-Commerce)</h3>
+  <p>Framework PHP para construir aplicaciones web y tiendas online seguras, rápidas y fáciles de gestionar.</p>
+</div>
 
-    <a href="vaadin.html" class="tech-card">
-      <img src="img/javafx.png" alt="Vaadin Logo">
-      <h3>Java + JavaFX (Escritorio) </h3>
-    </a>
+<div class="tech-card">
+  <img src="img/javafx.png" alt="Vaadin Logo">
+  <h3>Java + JavaFX (Aplicaciones de Escritorio)</h3>
+  <p>Framework para desarrollar aplicaciones de escritorio ricas e interactivas utilizando Java y JavaFX.</p>
+</div>
 
   </div>
 </section>
@@ -93,6 +98,31 @@
   <footer class="footer">
     <p>© 2025 DavCode Solutions. Todos los derechos reservados.</p>
   </footer>
+<!-- 🔹 CHATBOT -->
+<div class="chatbot-container" id="chatbot">
+  <div class="chatbot-header">
+    <h3>🤖 DavBot</h3>
+    <button id="closeChat">&times;</button>
+  </div>
+  <div class="chatbot-body" id="chatBody">
+    <p class="bot-text">¡Hola! 👋 Soy <b>DavBot</b> de DavCode Solutions. ¿En qué puedo ayudarte hoy?</p>
+    <div class="options">
+      <button class="option-btn">¿Por qué comprar con DavCode Solutions?</button>
+      <button class="option-btn">¿Cuánto tarda un desarrollo?</button>
+      <button class="option-btn">¿Qué tipos de software hacen?</button>
+      <button class="option-btn">¿Puedo solicitar una demo?</button>
+    </div>
+  </div>
+</div>
+
+<!-- 🔹 BOTÓN FLOTANTE -->
+<button class="chat-toggle" id="openChat">💬</button>
+
+<!-- 🔹 BOTÓN WHATSAPP -->
+<a href="https://wa.me/573107864885" class="whatsapp-float" target="_blank" title="Chatea con nosotros en WhatsApp">
+  <img src="img/whatsapp.png" alt="WhatsApp" class="whatsapp-icon">
+</a>
+
 
 </body>
 </html>
