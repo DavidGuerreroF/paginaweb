@@ -4,31 +4,84 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="icon" href="img/favicon.png" type="image/x-icon">
-  <title>DavCode Solutions - Innovación y Desarrollo Tecnológico</title>
+  <title>Davora Tecnologies - Innovación y Desarrollo Tecnológico</title>
   <link rel="stylesheet" href="css/style.css" />
   <script defer src="js/script.js"></script>
 </head>
 <body>
 
+  <!-- 🔹 SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-content">
+      <nav class="sidebar-nav">
+        <a href="#inicio" class="sidebar-link active">
+          <span class="sidebar-icon">🏠</span>
+          <span class="sidebar-text">Inicio</span>
+        </a>
+        <a href="#servicios" class="sidebar-link">
+          <span class="sidebar-icon">⚙️</span>
+          <span class="sidebar-text">Servicios</span>
+        </a>
+        <a href="#tecnologias" class="sidebar-link">
+          <span class="sidebar-icon">💻</span>
+          <span class="sidebar-text">Tecnologías</span>
+        </a>
+        <a href="sobre-mi.html" class="sidebar-link">
+          <span class="sidebar-icon">👤</span>
+          <span class="sidebar-text">Sobre nosotros</span>
+        </a>
+        <a href="contacto.html" class="sidebar-link">
+          <span class="sidebar-icon">📞</span>
+          <span class="sidebar-text">Contacto</span>
+        </a>
+      </nav>
+    </div>
+  </aside>
+
   <!-- 🔹 HEADER -->
   <header class="header">
     <nav class="navbar">
-      <div class="logo">DavCode <span>Solutions</span></div>
+      <div class="navbar-brand">
+        <button class="sidebar-toggle" id="sidebarToggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div class="logo">Davora <span>Tecnologies</span></div>
+      </div>
       <ul class="nav-links">
         <li><a href="#inicio">Inicio</a></li>
-        <li><a href="sobre-mi.html" >Sobre nosotros</a></li>
-        <li><a href="contacto.html" >Contacto</a></li>
+        <li><a href="sobre-mi.html">Sobre nosotros</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
       </ul>
     </nav>
   </header>
 
   <!-- 🔹 HERO -->
-  <section id="inicio" class="hero">
+    <section id="inicio" class="hero">
     <div class="hero-overlay"></div>
-    <div class="hero-content fade-in">
-      <h1 class="slide-down">Impulsa tu negocio con soluciones tecnológicas a medida</h1>
-      <p class="fade-in-delay">Transformamos tus ideas en resultados reales con software de gestión, aplicaciones y desarrollo web personalizado.</p>
-      <a href="contacto.html" class="btn pulse">Contáctame</a>
+    <div class="hero-content">
+      <div class="hero-badge">Soluciones Tecnológicas Modernas</div>
+      <h1 class="hero-title">Impulsa tu negocio con <span class="highlight">tecnología a medida</span></h1>
+      <p class="hero-subtitle">Transformamos tus ideas en resultados reales. Software de gestión, aplicaciones web y desarrollo personalizado que tu negocio necesita.</p>
+      <div class="hero-buttons">
+        <a href="contacto.html" class="btn btn-primary">Contáctame Ahora</a>
+        <a href="#servicios" class="btn btn-secondary">Ver Servicios</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-number">50+</span>
+          <span class="stat-label">Proyectos</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">100%</span>
+          <span class="stat-label">Satisfacción</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">24/7</span>
+          <span class="stat-label">Soporte</span>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -59,70 +112,99 @@
       </div>
     </div>
   </section>
+
   <!-- ===== TECNOLOGÍAS ===== -->
-<section class="tecnologias" id="tecnologias">
-  <h2>Tecnologías que usamos</h2>
-  <p>En DavCode Solutions desarrollamos con las mejores herramientas del mercado, adaptadas a cada tipo de proyecto.</p>
+  <section class="tecnologias" id="tecnologias">
+    <h2>Tecnologías que usamos</h2>
+    <p>En Davora desarrollamos con las mejores herramientas del mercado, adaptadas a cada tipo de proyecto.</p>
 
-  <div class="tecnologias-container">
+    <div class="tecnologias-container">
+      <div class="tech-card">
+        <img src="img/nodejs.png" alt="Node.js Logo">
+        <h3>Node.js (Desarrollo Web)</h3>
+        <p>Plataforma robusta para el desarrollo de aplicaciones web rápidas y escalables con JavaScript en el servidor.</p>
+      </div>
 
-<div class="tech-card">
-  <img src="img/nodejs.png" alt="Node.js Logo">
-  <h3>Node.js (Desarrollo Web)</h3>
-  <p>Plataforma robusta para el desarrollo de aplicaciones web rápidas y escalables con JavaScript en el servidor.</p>
-</div>
+      <div class="tech-card">
+        <img src="img/react.png" alt="React Logo">
+        <h3>React (Frontend Web)</h3>
+        <p>Biblioteca de JavaScript para crear interfaces de usuario dinámicas y reactivas, ideales para aplicaciones web modernas.</p>
+      </div>
 
-<div class="tech-card">
-  <img src="img/react.png" alt="React Logo">
-  <h3>React (Frontend Web)</h3>
-  <p>Biblioteca de JavaScript para crear interfaces de usuario dinámicas y reactivas, ideales para aplicaciones web modernas.</p>
-</div>
+      <div class="tech-card">
+        <img src="img/laravel.png" alt="Laravel Logo">
+        <h3>Laravel (Desarrollo E-Commerce)</h3>
+        <p>Framework PHP para construir aplicaciones web y tiendas online seguras, rápidas y fáciles de gestionar.</p>
+      </div>
 
-<div  class="tech-card">
-  <img src="img/laravel.png" alt="Laravel Logo">
-  <h3>Laravel (Desarrollo E-Commerce)</h3>
-  <p>Framework PHP para construir aplicaciones web y tiendas online seguras, rápidas y fáciles de gestionar.</p>
-</div>
-
-<div class="tech-card">
-  <img src="img/javafx.png" alt="Vaadin Logo">
-  <h3>Java + JavaFX (Aplicaciones de Escritorio)</h3>
-  <p>Framework para desarrollar aplicaciones de escritorio ricas e interactivas utilizando Java y JavaFX.</p>
-</div>
-
-  </div>
-</section>
-
+      <div class="tech-card">
+        <img src="img/javafx.png" alt="Vaadin Logo">
+        <h3>Java + JavaFX (Aplicaciones de Escritorio)</h3>
+        <p>Framework para desarrollar aplicaciones de escritorio ricas e interactivas utilizando Java y JavaFX.</p>
+      </div>
+    </div>
+  </section>
 
   <!-- 🔹 FOOTER -->
   <footer class="footer">
     <p>© 2025 DavCode Solutions. Todos los derechos reservados.</p>
   </footer>
-<!-- 🔹 CHATBOT -->
-<div class="chatbot-container" id="chatbot">
-  <div class="chatbot-header">
-    <h3>🤖 DavBot</h3>
-    <button id="closeChat">&times;</button>
-  </div>
-  <div class="chatbot-body" id="chatBody">
-    <p class="bot-text">¡Hola! 👋 Soy <b>DavBot</b> de DavCode Solutions. ¿En qué puedo ayudarte hoy?</p>
-    <div class="options">
-      <button class="option-btn">¿Por qué comprar con DavCode Solutions?</button>
-      <button class="option-btn">¿Cuánto tarda un desarrollo?</button>
-      <button class="option-btn">¿Qué tipos de software hacen?</button>
-      <button class="option-btn">¿Puedo solicitar una demo?</button>
+
+  <!-- 🔹 CHATBOT -->
+  <div class="chatbot-container" id="chatbot">
+    <div class="chatbot-header">
+      <h3>🤖 DavBot</h3>
+      <button id="closeChat">&times;</button>
+    </div>
+    <div class="chatbot-body" id="chatBody">
+      <p class="bot-text">¡Hola! 👋 Soy <b>DavBot</b> de Davora. ¿En qué puedo ayudarte hoy?</p>
+      <div class="options">
+        <button class="option-btn">¿Por qué comprar con Davora Software?</button>
+        <button class="option-btn">¿Cuánto tarda un desarrollo?</button>
+        <button class="option-btn">¿Qué tipos de software hacen?</button>
+        <button class="option-btn">¿Puedo solicitar una demo?</button>
+      </div>
     </div>
   </div>
-</div>
 
-<!-- 🔹 BOTÓN FLOTANTE -->
-<button class="chat-toggle" id="openChat">💬</button>
+  <!-- 🔹 BOTÓN FLOTANTE -->
+  <button class="chat-toggle" id="openChat">💬</button>
 
-<!-- 🔹 BOTÓN WHATSAPP -->
-<a href="https://wa.me/573107864885" class="whatsapp-float" target="_blank" title="Chatea con nosotros en WhatsApp">
-  <img src="img/whatsapp.png" alt="WhatsApp" class="whatsapp-icon">
-</a>
+  <!-- 🔹 BOTÓN WHATSAPP -->
+  <a href="https://wa.me/573107864885" class="whatsapp-float" target="_blank" title="Chatea con nosotros en WhatsApp">
+    <img src="img/whatsapp.png" alt="WhatsApp" class="whatsapp-icon">
+  </a>
 
+  <script>
+    // Sidebar Toggle
+    const sidebar = document.getElementById('sidebar');
+    const sidebarToggle = document.getElementById('sidebarToggle');
+    
+    sidebarToggle.addEventListener('click', () => {
+      sidebar.classList.toggle('active');
+    });
+
+    // Cerrar sidebar al hacer click en un link
+    document.querySelectorAll('.sidebar-link').forEach(link => {
+      link.addEventListener('click', () => {
+        sidebar.classList.remove('active');
+      });
+    });
+
+    // Sidebar auto-hide cuando no hay mouse cerca
+    let sidebarTimeout;
+    document.addEventListener('mousemove', (e) => {
+      if (sidebar.classList.contains('active')) {
+        clearTimeout(sidebarTimeout);
+        
+        if (e.clientX > 250) {
+          sidebarTimeout = setTimeout(() => {
+            sidebar.classList.remove('active');
+          }, 3000);
+        }
+      }
+    });
+  </script>
 
 </body>
 </html>

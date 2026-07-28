@@ -14,7 +14,56 @@ const observer = new IntersectionObserver((entries) => {
 
 filteredElements.forEach(el => observer.observe(el));
 
-// CHATBOT SIMPLE DAVCODE SOLUTIONS
+// ===== SIDEBAR NAVIGATION =====
+document.addEventListener('DOMContentLoaded', () => {
+  const sidebar = document.getElementById('sidebar');
+  const sidebarToggle = document.getElementById('sidebarToggle');
+  const sidebarLinks = document.querySelectorAll('.sidebar-link');
+
+  // Toggle sidebar
+  sidebarToggle.addEventListener('click', () => {
+    sidebar.classList.toggle('active');
+  });
+
+  // Cerrar sidebar al hacer click en un link
+  sidebarLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      // Si no es un link externo, cierra el sidebar
+      if (!link.href.includes('http') && !link.href.includes('.html')) {
+        sidebar.classList.remove('active');
+      }
+      // Actualizar active state
+      sidebarLinks.forEach(l => l.classList.remove('active'));
+      link.classList.add('active');
+    });
+  });
+
+  // Auto-hide sidebar cuando el mouse se aleja
+  let sidebarTimeout;
+  document.addEventListener('mousemove', (e) => {
+    if (sidebar.classList.contains('active')) {
+      clearTimeout(sidebarTimeout);
+
+      // Si el mouse está fuera del sidebar por más de 3 segundos, lo cierra
+      if (e.clientX > 280) {
+        sidebarTimeout = setTimeout(() => {
+          sidebar.classList.remove('active');
+        }, 3000);
+      }
+    }
+  });
+
+  // Cerrar sidebar si hace click fuera de él
+  document.addEventListener('click', (e) => {
+    if (sidebar.classList.contains('active') && 
+        !sidebar.contains(e.target) && 
+        !sidebarToggle.contains(e.target)) {
+      sidebar.classList.remove('active');
+    }
+  });
+});
+
+// ===== CHATBOT SIMPLE DAVCODE SOLUTIONS =====
 document.addEventListener("DOMContentLoaded", () => {
   const openChat = document.getElementById("openChat");
   const closeChat = document.getElementById("closeChat");
@@ -57,6 +106,11 @@ document.addEventListener("DOMContentLoaded", () => {
         chatBody.appendChild(botMsg);
         chatBody.scrollTop = chatBody.scrollHeight;
       }, 500);
+
+      // Deshabilitar el botón después de hacer click
+      btn.disabled = true;
+      btn.style.opacity = "0.5";
+      btn.style.cursor = "not-allowed";
     });
   });
 });

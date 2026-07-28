@@ -3,203 +3,325 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contáctanos - DavCode Solutions</title>
   <link rel="icon" href="img/favicon.png" type="image/x-icon">
+  <title>Contacto - Davora</title>
   <link rel="stylesheet" href="css/style.css" />
-  <style>
-    /* ===== ESTILOS CONTACTO ===== */
-    body {
-      background: linear-gradient(135deg, #0d1117, #1a1f24);
-      color: #eee;
-      font-family: 'Poppins', sans-serif;
-    }
-
-    main {
-      padding: 120px 40px;
-      max-width: 750px;
-      margin: auto;
-      text-align: center;
-    }
-
-    .contacto-container {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 25px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-      padding: 50px 40px;
-      backdrop-filter: blur(10px);
-      transition: transform 0.3s ease;
-    }
-
-    .contacto-container:hover {
-      transform: translateY(-5px);
-    }
-
-    .contacto-container img {
-      width: 130px;
-      height: 130px;
-      border-radius: 50%;
-      margin-bottom: 25px;
-      border: 3px solid #00bcd4;
-      box-shadow: 0 0 15px rgba(0, 188, 212, 0.4);
-    }
-
-    h1 {
-      color: #00e5ff;
-      font-size: 1.9rem;
-      margin-bottom: 15px;
-      line-height: 1.4;
-    }
-
-    p {
-      line-height: 1.7;
-      font-size: 1.05rem;
-      color: #ddd;
-      margin-bottom: 15px;
-    }
-
-    strong {
-      color: #00bcd4;
-    }
-
-    .contact-buttons {
-      margin-top: 35px;
-      display: flex;
-      justify-content: center;
-      gap: 25px;
-      flex-wrap: wrap;
-    }
-
-    .btn-contact {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      background: #00bcd4;
-      color: #fff;
-      text-decoration: none;
-      padding: 12px 28px;
-      border-radius: 50px;
-      font-weight: 600;
-      font-size: 1rem;
-      letter-spacing: 0.5px;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(0, 188, 212, 0.4);
-    }
-
-    .btn-contact:hover {
-      background: #00e5ff;
-      transform: scale(1.07);
-      box-shadow: 0 6px 20px rgba(0, 229, 255, 0.5);
-    }
-
-    .btn-contact img {
-      width: 26px;
-      height: 26px;
-      filter: brightness(0) invert(1);
-    }
-
-    .frase {
-      margin-top: 40px;
-      font-style: italic;
-      color: #bbb;
-      font-size: 1.1rem;
-    }
-
-    .extra {
-      margin-top: 10px;
-      color: #ccc;
-    }
-
-    /* ===== NAVBAR (AJUSTE DE COLORES) ===== */
-    .header {
-      background: rgba(0, 0, 0, 0.9);
-      backdrop-filter: blur(10px);
-      position: fixed;
-      width: 100%;
-      top: 0;
-      z-index: 100;
-    }
-
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1em 3em;
-    }
-
-    .logo {
-      color: #00e5ff;
-      font-size: 1.4em;
-      font-weight: bold;
-    }
-
-    .nav-links {
-      list-style: none;
-      display: flex;
-      gap: 1.5em;
-    }
-
-    .nav-links a {
-      color: #fff;
-      text-decoration: none;
-      transition: color 0.3s;
-      font-weight: 500;
-    }
-
-    .nav-links a:hover {
-      color: #00e5ff;
-    }
-
-    /* ===== RESPONSIVE ===== */
-    @media (max-width: 768px) {
-      main {
-        padding: 100px 20px;
-      }
-      h1 {
-        font-size: 1.6rem;
-      }
-      .contacto-container {
-        padding: 35px 25px;
-      }
-    }
-  </style>
+  <script defer src="js/script.js"></script>
 </head>
-
 <body>
-  <!-- HEADER -->
+
+  <!-- 🔹 SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-content">
+      <nav class="sidebar-nav">
+        <a href="index.html#inicio" class="sidebar-link">
+          <span class="sidebar-icon">🏠</span>
+          <span class="sidebar-text">Inicio</span>
+        </a>
+        <a href="index.html#servicios" class="sidebar-link">
+          <span class="sidebar-icon">⚙️</span>
+          <span class="sidebar-text">Servicios</span>
+        </a>
+        <a href="index.html#tecnologias" class="sidebar-link">
+          <span class="sidebar-icon">💻</span>
+          <span class="sidebar-text">Tecnologías</span>
+        </a>
+        <a href="sobre-mi.html" class="sidebar-link">
+          <span class="sidebar-icon">👤</span>
+          <span class="sidebar-text">Sobre nosotros</span>
+        </a>
+        <a href="contacto.html" class="sidebar-link active">
+          <span class="sidebar-icon">📞</span>
+          <span class="sidebar-text">Contacto</span>
+        </a>
+      </nav>
+    </div>
+  </aside>
+
+  <!-- 🔹 HEADER -->
   <header class="header">
     <nav class="navbar">
-      <div class="logo">DavCode <span style="color:white;">Solutions</span></div>
+      <div class="navbar-brand">
+        <button class="sidebar-toggle" id="sidebarToggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <a href="index.html" class="logo">DavCode <span>Solutions</span></a>
+      </div>
       <ul class="nav-links">
-        <li><a href="index.html">Inicio</a></li>
+        <li><a href="index.html#inicio">Inicio</a></li>
+        <li><a href="index.html#servicios">Servicios</a></li>
+        <li><a href="index.html#tecnologias">Tecnologías</a></li>
+        <li><a href="sobre-mi.html">Sobre nosotros</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- CONTENIDO PRINCIPAL -->
-  <main>
-    <div class="contacto-container fade-in">
-      <img src="img/perfil.jpg" alt="Foto de David Guerrero - CEO DavCode Solutions" />
-      <h1>Hagamos crecer tu negocio con tecnología que marque la diferencia 🚀</h1>
-      <p><strong>¡Hola!, </strong>mi nombre es David Guerrero fundador y desarrollador de software en <strong>DavCode Solutions</strong>. Mi equipo y yo ayudamos a empresas, emprendedores y profesionales independientes a llevar sus ideas al entorno digital,
-        creando soluciones que impulsan su crecimiento.
-       </p>
+  <!-- 🔹 HERO CONTACTO -->
+  <section class="contact-hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1 class="hero-title">¿Listo para transformar tu negocio?</h1>
+      <p class="hero-subtitle">Estamos aquí para escucharte y ayudarte a llevar tus ideas al siguiente nivel</p>
+    </div>
+  </section>
 
-     <p>🚀 ¿Listo para impulsar tu negocio o proyecto con tecnología moderna y eficiente?
-      Contáctame directamente y construyamos juntos la solución que necesitas.</p>
+  <!-- 🔹 FORMULARIO Y INFO DE CONTACTO -->
+  <section class="contact-section">
+    <div class="contact-container">
+      
+      <!-- COLUMNA IZQ: INFO DE CONTACTO -->
+      <div class="contact-info fade-up">
+        <h2>Información de Contacto</h2>
+        
+        <div class="contact-item">
+          <div class="contact-icon">📧</div>
+          <div class="contact-details">
+            <h3>Correo Electrónico</h3>
+            <a href="mailto:dcodes@gmail.com">dcodes@gmail.com</a>
+          </div>
+        </div>
 
-      <div class="contact-buttons">
-        <a href="https://wa.me/573107864885" target="_blank" class="btn-contact">
-          <img src="img/whatsapp.png" alt="WhatsApp" /> WhatsApp
-        </a>
-        <a href="mailto:brayan8412@gmail.com" class="btn-contact">
-          <img src="img/email.png" alt="Correo electrónico" /> Enviar Correo
-        </a>
+        <div class="contact-item">
+          <div class="contact-icon">📱</div>
+          <div class="contact-details">
+            <h3>Teléfono</h3>
+            <a href="tel:+573107864885">+57 310 786 4885</a>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon">💬</div>
+          <div class="contact-details">
+            <h3>WhatsApp</h3>
+            <a href="https://wa.me/573107864885" target="_blank">Chatea con nosotros</a>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon">⏰</div>
+          <div class="contact-details">
+            <h3>Horarios de Atención</h3>
+            <p>Lunes a Viernes: 9:00 AM - 6:00 PM</p>
+            <p>Sábados: 10:00 AM - 3:00 PM</p>
+          </div>
+        </div>
+
+        <div class="social-links">
+          <a href="https://wa.me/573107864885" class="social-btn whatsapp-btn" target="_blank">
+            <span>WhatsApp</span>
+          </a>
+          <a href="mailto:dcodes@gmail.com" class="social-btn email-btn">
+            <span>Enviar Email</span>
+          </a>
+        </div>
       </div>
 
-      <p class="frase">💡 “No vendo software, creo soluciones que hacen crecer tu negocio.”</p>
-      <p class="extra">📍 Antes de tu compra, agendaremos una reunión personal, recibirás una demo para confirmar tu decisión y formalizaremos el acuerdo de manera segura.</p>
+      <!-- COLUMNA DER: FORMULARIO -->
+      <div class="contact-form fade-up delay-1">
+        <h2>Envíanos tu Mensaje</h2>
+        <form id="contactForm">
+          <div class="form-group">
+            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+          </div>
+
+          <div class="form-group">
+            <input type="email" id="email" name="email" placeholder="Tu correo electrónico" required>
+          </div>
+
+          <div class="form-group">
+            <input type="tel" id="telefono" name="telefono" placeholder="Tu teléfono (opcional)">
+          </div>
+
+          <div class="form-group">
+            <input type="text" id="empresa" name="empresa" placeholder="Nombre de tu empresa (opcional)">
+          </div>
+
+          <div class="form-group full-width">
+            <label class="form-label">¿Qué te interesa?</label>
+            <div class="checkbox-group">
+              <label class="checkbox-item">
+                <input type="checkbox" name="interes" value="demo">
+                <span class="checkbox-custom"></span>
+                <span>Adquirir una demo gratuita</span>
+              </label>
+              <label class="checkbox-item">
+                <input type="checkbox" name="interes" value="desarrollo">
+                <span class="checkbox-custom"></span>
+                <span>Desarrollar una aplicación personalizada</span>
+              </label>
+              <label class="checkbox-item">
+                <input type="checkbox" name="interes" value="sitio-web">
+                <span class="checkbox-custom"></span>
+                <span>Crear un sitio web profesional</span>
+              </label>
+              <label class="checkbox-item">
+                <input type="checkbox" name="interes" value="ecommerce">
+                <span class="checkbox-custom"></span>
+                <span>Desarrollar una tienda online</span>
+              </label>
+              <label class="checkbox-item">
+                <input type="checkbox" name="interes" value="mantenimiento">
+                <span class="checkbox-custom"></span>
+                <span>Mantenimiento y soporte técnico</span>
+              </label>
+              <label class="checkbox-item">
+                <input type="checkbox" name="interes" value="consulta">
+                <span class="checkbox-custom"></span>
+                <span>Consulta técnica</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group full-width">
+            <textarea id="mensaje" name="mensaje" placeholder="Cuéntanos sobre tu proyecto o necesidad..." rows="6" required></textarea>
+          </div>
+
+          <div class="form-group full-width">
+            <label class="checkbox-item">
+              <input type="checkbox" name="terminos" required>
+              <span class="checkbox-custom"></span>
+              <span>Acepto los términos y condiciones</span>
+            </label>
+          </div>
+
+          <button type="submit" class="btn btn-primary full-width">Enviar Mensaje</button>
+        </form>
+        <p class="form-note">Nos pondremos en contacto dentro de 24 horas</p>
+      </div>
+
     </div>
-  </main>
+  </section>
+
+  <!-- 🔹 SECCIÓN DE BENEFICIOS -->
+  <section class="contact-benefits">
+    <h2 class="section-title">¿Por qué contactarnos?</h2>
+    <div class="benefits-grid">
+      <div class="benefit-card fade-up">
+        <div class="benefit-icon">⚡</div>
+        <h3>Respuesta Rápida</h3>
+        <p>Te respondemos dentro de 24 horas con una solución personalizada a tu consulta.</p>
+      </div>
+      <div class="benefit-card fade-up delay-1">
+        <div class="benefit-icon">🎯</div>
+        <h3>Soluciones Personalizadas</h3>
+        <p>No hay dos negocios iguales, adaptamos nuestros servicios a tus necesidades específicas.</p>
+      </div>
+      <div class="benefit-card fade-up delay-2">
+        <div class="benefit-icon">💰</div>
+        <h3>Precios Competitivos</h3>
+        <p>Ofrecemos la mejor relación calidad-precio del mercado en desarrollo web y aplicaciones.</p>
+      </div>
+      <div class="benefit-card fade-up delay-3">
+        <div class="benefit-icon">🤝</div>
+        <h3>Equipo Profesional</h3>
+        <p>Trabajamos con desarrolladores expertos con años de experiencia en el industria.</p>
+      </div>
+      <div class="benefit-card fade-up delay-4">
+        <div class="benefit-icon">🔒</div>
+        <h3>Confidencialidad Garantizada</h3>
+        <p>Tu información y proyectos están completamente seguros con nosotros.</p>
+      </div>
+      <div class="benefit-card fade-up delay-5">
+        <div class="benefit-icon">📞</div>
+        <h3>Soporte Continuo</h3>
+        <p>Después del desarrollo, te brindamos soporte técnico y mantenimiento permanente.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 🔹 FOOTER -->
+  <footer class="footer">
+    <p>© 2025 DavCode Solutions. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- 🔹 CHATBOT -->
+  <div class="chatbot-container" id="chatbot">
+    <div class="chatbot-header">
+      <h3>🤖 DavBot</h3>
+      <button id="closeChat">&times;</button>
+    </div>
+    <div class="chatbot-body" id="chatBody">
+      <p class="bot-text">¡Hola! 👋 Soy <b>DavBot</b> de DavCode Solutions. ¿En qué puedo ayudarte hoy?</p>
+      <div class="options">
+        <button class="option-btn">¿Por qué comprar con DavCode Solutions?</button>
+        <button class="option-btn">¿Cuánto tarda un desarrollo?</button>
+        <button class="option-btn">¿Qué tipos de software hacen?</button>
+        <button class="option-btn">¿Puedo solicitar una demo?</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 🔹 BOTÓN FLOTANTE -->
+  <button class="chat-toggle" id="openChat">💬</button>
+
+  <!-- 🔹 BOTÓN WHATSAPP -->
+  <a href="https://wa.me/573107864885" class="whatsapp-float" target="_blank" title="Chatea con nosotros en WhatsApp">
+    <img src="img/whatsapp.png" alt="WhatsApp" class="whatsapp-icon">
+  </a>
+
+  <script>
+    // Sidebar Toggle
+    const sidebar = document.getElementById('sidebar');
+    const sidebarToggle = document.getElementById('sidebarToggle');
+    
+    sidebarToggle.addEventListener('click', () => {
+      sidebar.classList.toggle('active');
+    });
+
+    // Cerrar sidebar al hacer click en un link
+    document.querySelectorAll('.sidebar-link').forEach(link => {
+      link.addEventListener('click', () => {
+        sidebar.classList.remove('active');
+      });
+    });
+
+    // Sidebar auto-hide cuando no hay mouse cerca
+    let sidebarTimeout;
+    document.addEventListener('mousemove', (e) => {
+      if (sidebar.classList.contains('active')) {
+        clearTimeout(sidebarTimeout);
+        
+        if (e.clientX > 250) {
+          sidebarTimeout = setTimeout(() => {
+            sidebar.classList.remove('active');
+          }, 3000);
+        }
+      }
+    });
+
+    // Formulario de contacto
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+      contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Obtener datos del formulario
+        const nombre = document.getElementById('nombre').value;
+        const email = document.getElementById('email').value;
+        const telefono = document.getElementById('telefono').value;
+        const empresa = document.getElementById('empresa').value;
+        const mensaje = document.getElementById('mensaje').value;
+        
+        // Obtener intereses seleccionados
+        const intereses = Array.from(document.querySelectorAll('input[name="interes"]:checked'))
+          .map(checkbox => checkbox.value)
+          .join(', ');
+
+        // Crear mensaje para WhatsApp
+        const mensajeWhatsApp = `Hola DavCode Solutions, me gustaría contactarlos:\n\nNombre: ${nombre}\nEmail: ${email}\nTeléfono: ${telefono}\nEmpresa: ${empresa}\n\nMe interesa: ${intereses || 'Consulta general'}\n\nMensaje: ${mensaje}`;
+
+        // Redirigir a WhatsApp
+        const urlWhatsApp = `https://wa.me/573107864885?text=${encodeURIComponent(mensajeWhatsApp)}`;
+        window.open(urlWhatsApp, '_blank');
+
+        // Limpiar formulario
+        contactForm.reset();
+      });
+    }
+  </script>
+
 </body>
 </html>
