@@ -1,0 +1,106 @@
+/* =====================================================
+   contrato.css — Estilos exclusivos de contrato.html
+   ===================================================== */
+
+/* ===== SECCIÓN PRINCIPAL ===== */
+.contrato-section {
+  padding: 100px 40px 80px;
+  background: var(--white);
+  margin-top: var(--header-h);
+}
+.contrato-inner { max-width: 860px; margin: 0 auto; }
+
+/* ===== ENCABEZADO ===== */
+.contrato-header {
+  text-align: center;
+  padding-bottom: 40px;
+  border-bottom: 2px solid rgba(168,85,247,.15);
+  margin-bottom: 48px;
+}
+.contrato-logo { font-size: 1.8em; font-weight: 900; color: var(--purple); margin-bottom: 6px; }
+.contrato-logo span { color: var(--text-dark); }
+.contrato-header p  { font-size: .95em; color: var(--gray-400); margin-top: 4px; }
+
+/* ===== PARTES ===== */
+.partes-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 24px; margin-bottom: 48px;
+}
+.parte-box {
+  background: var(--gray-100);
+  border: 1px solid rgba(168,85,247,.12);
+  border-radius: var(--radius-md); padding: 24px;
+}
+.parte-box h3 {
+  font-size: .8em; font-weight: 700; letter-spacing: 1px;
+  text-transform: uppercase; color: var(--purple); margin-bottom: 16px;
+}
+
+.parte-field { display: flex; flex-direction: column; gap: 4px; margin-bottom: 14px; }
+.parte-field label { font-size: .78em; font-weight: 600; color: var(--gray-600); }
+.parte-field .field-line {
+  border: none; border-bottom: 1.5px solid rgba(168,85,247,.25);
+  padding: 4px 0; font-size: .9em; color: var(--text-dark);
+  background: transparent; font-family: var(--font); width: 100%;
+}
+.parte-field .field-line:focus { outline: none; border-bottom-color: var(--purple); }
+
+/* ===== FECHA ===== */
+.fecha-line { font-size: .93em; color: var(--gray-600); margin-bottom: 40px; }
+.fecha-line span {
+  display: inline-block; width: 40px;
+  border-bottom: 1.5px solid rgba(168,85,247,.3);
+  margin: 0 4px; vertical-align: bottom;
+}
+
+/* ===== CLÁUSULAS ===== */
+.contrato-clausula { margin-bottom: 36px; }
+.contrato-clausula h2 {
+  font-size: 1em; font-weight: 700; color: var(--text-dark);
+  border-left: 3px solid var(--purple);
+  padding-left: 12px; margin-bottom: 14px;
+}
+.contrato-clausula p,
+.contrato-clausula li { font-size: .93em; color: var(--gray-600); line-height: 1.75; }
+.contrato-clausula ul {
+  list-style: disc; padding-left: 20px;
+  display: flex; flex-direction: column; gap: 6px; margin-top: 8px;
+}
+.contrato-clausula .resaltar { color: var(--purple); font-weight: 700; }
+
+/* ===== FIRMAS ===== */
+.firmas-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 48px; margin-top: 60px;
+  padding-top: 40px; border-top: 1px solid rgba(168,85,247,.1);
+}
+.firma-box { text-align: center; }
+.firma-box .firma-espacio {
+  height: 60px; border-bottom: 1.5px solid var(--gray-600);
+  width: 80%; margin: 0 auto 10px;
+}
+.firma-box p      { font-size: .88em; color: var(--gray-600); }
+.firma-box strong { display: block; font-size: .82em; color: var(--purple); margin-top: 4px; }
+
+/* ===== NOTA LEGAL ===== */
+.nota-legal {
+  text-align: center; font-size: .78em; color: var(--gray-400);
+  margin-top: 48px; padding-top: 24px;
+  border-top: 1px solid rgba(168,85,247,.08); line-height: 1.6;
+}
+
+/* ===== PRINT ===== */
+@media print {
+  .header, .footer, .sidebar,
+  .chat-toggle, .chatbot-container,
+  .whatsapp-float { display: none !important; }
+  .contrato-section { margin-top: 0; padding: 20mm; }
+  body { background: #fff; }
+}
+
+/* ===== RESPONSIVE CONTRATO ===== */
+@media (max-width: 768px) {
+  .contrato-section { padding: 70px 20px 60px; }
+  .partes-grid  { grid-template-columns: 1fr; }
+  .firmas-grid  { grid-template-columns: 1fr; gap: 40px; }
+}

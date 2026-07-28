@@ -1,189 +1,401 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contrato de Desarrollo - Davora</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="img/favicon.png" type="image/x-icon" />
+  <title>Contrato de Desarrollo — Davora Tecnologies</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/contrato.css" />
+  <script defer src="js/script.js"></script>
   <style>
-    body {
-      font-family: "Arial", sans-serif;
-      margin: 40px;
-      line-height: 1.6;
-      color: #333;
-      background-color: #fdfdfd;
+    /* ── Contrato page ── */
+    .contrato-section {
+      padding: 100px 40px 80px;
+      background: var(--white);
+      margin-top: var(--header-h);
+    }
+    .contrato-inner {
+      max-width: 860px;
+      margin: 0 auto;
     }
 
-    header {
+    /* Header del contrato */
+    .contrato-header {
       text-align: center;
+      padding-bottom: 40px;
+      border-bottom: 2px solid rgba(168,85,247,.15);
+      margin-bottom: 48px;
+    }
+    .contrato-logo {
+      font-size: 1.8em;
+      font-weight: 900;
+      color: var(--purple);
+      margin-bottom: 6px;
+    }
+    .contrato-logo span { color: var(--text-dark); }
+    .contrato-header p {
+      font-size: .95em;
+      color: var(--gray-400);
+      margin-top: 4px;
+    }
+
+    /* Partes */
+    .partes-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-bottom: 48px;
+    }
+    .parte-box {
+      background: var(--gray-100);
+      border: 1px solid rgba(168,85,247,.12);
+      border-radius: var(--radius-md);
+      padding: 24px;
+    }
+    .parte-box h3 {
+      font-size: .8em;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--purple);
+      margin-bottom: 16px;
+    }
+    .parte-field {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      margin-bottom: 14px;
+    }
+    .parte-field label { font-size: .78em; font-weight: 600; color: var(--gray-600); }
+    .parte-field .field-line {
+      border: none;
+      border-bottom: 1.5px solid rgba(168,85,247,.25);
+      padding: 4px 0;
+      font-size: .9em;
+      color: var(--text-dark);
+      background: transparent;
+      font-family: var(--font);
+      width: 100%;
+    }
+    .parte-field .field-line:focus {
+      outline: none;
+      border-bottom-color: var(--purple);
+    }
+
+    /* Secciones del contrato */
+    .contrato-clausula {
+      margin-bottom: 36px;
+    }
+    .contrato-clausula h2 {
+      font-size: 1em;
+      font-weight: 700;
+      color: var(--text-dark);
+      border-left: 3px solid var(--purple);
+      padding-left: 12px;
+      margin-bottom: 14px;
+    }
+    .contrato-clausula p,
+    .contrato-clausula li {
+      font-size: .93em;
+      color: var(--gray-600);
+      line-height: 1.75;
+    }
+    .contrato-clausula ul {
+      list-style: disc;
+      padding-left: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-top: 8px;
+    }
+    .contrato-clausula .resaltar {
+      color: var(--purple);
+      font-weight: 700;
+    }
+
+    /* Fecha */
+    .fecha-line {
+      font-size: .93em;
+      color: var(--gray-600);
       margin-bottom: 40px;
     }
-
-    header img {
-      max-width: 150px;
-      margin-bottom: 10px;
-    }
-
-    header h1 {
-      font-size: 28px;
-      color: #000;
-      margin: 0;
-    }
-
-    h2 {
-      color: #000;
-      margin-top: 30px;
-      margin-bottom: 15px;
-      border-bottom: 1px solid #000;
+    .fecha-line span {
       display: inline-block;
-      padding-bottom: 3px;
+      width: 40px;
+      border-bottom: 1.5px solid rgba(168,85,247,.3);
+      margin: 0 4px;
+      vertical-align: bottom;
     }
 
-    p, li {
-      font-size: 14px;
-      margin-bottom: 10px;
-    }
-
-    ul {
-      padding-left: 20px;
-    }
-
-    .firma {
-      display: flex;
-      justify-content: space-between;
+    /* Firmas */
+    .firmas-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
       margin-top: 60px;
+      padding-top: 40px;
+      border-top: 1px solid rgba(168,85,247,.1);
     }
-
-    .firma div {
-      text-align: center;
-      width: 45%;
-    }
-
-    .linea-firma {
-      margin-top: 60px;
-      border-top: 1px solid #333;
+    .firma-box { text-align: center; }
+    .firma-box .firma-espacio {
+      height: 60px;
+      border-bottom: 1.5px solid var(--gray-600);
       width: 80%;
-      margin-left: auto;
-      margin-right: auto;
+      margin: 0 auto 10px;
     }
+    .firma-box p { font-size: .88em; color: var(--gray-600); }
+    .firma-box strong { display: block; font-size: .82em; color: var(--purple); margin-top: 4px; }
 
-    .resaltar {
-      color: #e67e22;
-      font-weight: bold;
-    }
-
+    /* Nota legal */
     .nota-legal {
-      font-size: 11px;
-      color: #555;
-      margin-top: 40px;
       text-align: center;
+      font-size: .78em;
+      color: var(--gray-400);
+      margin-top: 48px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(168,85,247,.08);
+      line-height: 1.6;
     }
 
+    /* Print */
     @media print {
-      body {
-        margin: 20mm;
-      }
+      .header, .footer, .sidebar, .chat-toggle,
+      .chatbot-container, .whatsapp-float { display: none !important; }
+      .contrato-section { margin-top: 0; padding: 20mm; }
+      body { background: #fff; }
+    }
+
+    @media(max-width:768px){
+      .contrato-section { padding: 70px 20px 60px; }
+      .partes-grid  { grid-template-columns: 1fr; }
+      .firmas-grid  { grid-template-columns: 1fr; gap: 40px; }
     }
   </style>
 </head>
 <body>
-  <header>
-    <!-- Si tienes un logo, reemplaza src="logo.png" por tu logo -->
-    <img src="img/logo.png" alt="DavCode Solutions Logo">
-    <h1>Davora Tecnologies</h1>
-    <p>Contrato de Desarrollo de Software</p>
+
+  <!-- ===== SIDEBAR ===== -->
+  <aside class="sidebar" id="sidebar" aria-label="Menú lateral">
+    <div class="sidebar-logo">Davora <span>T.</span></div>
+    <nav class="sidebar-nav">
+      <a href="index.html#inicio" class="sidebar-link">
+        <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <span class="sidebar-text">Inicio</span>
+      </a>
+      <a href="index.html#servicios" class="sidebar-link">
+        <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 010 14.14M4.93 4.93a10 10 0 000 14.14"/></svg>
+        <span class="sidebar-text">Servicios</span>
+      </a>
+      <a href="index.html#tecnologias" class="sidebar-link">
+        <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        <span class="sidebar-text">Tecnologías</span>
+      </a>
+      <a href="sobre-mi.html" class="sidebar-link">
+        <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        <span class="sidebar-text">Sobre nosotros</span>
+      </a>
+      <a href="contacto.html" class="sidebar-link">
+        <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.18 1.18 2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.09a16 16 0 006 6l.46-.46a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        <span class="sidebar-text">Contacto</span>
+      </a>
+    </nav>
+  </aside>
+
+  <!-- ===== HEADER ===== -->
+  <header class="header" id="header">
+    <nav class="navbar">
+      <div class="navbar-brand">
+        <button class="sidebar-toggle" id="sidebarToggle" aria-label="Abrir menú">
+          <span></span><span></span><span></span>
+        </button>
+        <a href="index.html" class="logo">Davora <span>Tecnologies</span></a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html#inicio">Inicio</a></li>
+        <li><a href="index.html#servicios">Servicios</a></li>
+        <li><a href="index.html#tecnologias">Tecnologías</a></li>
+        <li><a href="sobre-mi.html">Sobre nosotros</a></li>
+        <li><a href="contacto.html" class="nav-cta">Contacto</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <section>
-    <p>Entre:</p>
-    <p><strong>Cliente:</strong> ___________________________</p>
-    <p><strong>Documento de identidad / NIT:</strong> ___________________________</p>
-    <p><strong>Dirección:</strong> ___________________________</p>
+  <!-- ===== CONTRATO ===== -->
+  <main class="contrato-section">
+    <div class="contrato-inner">
 
-    <p>Y</p>
-    <p><strong>Proveedor / Desarrollador:</strong> David Guerrero – DavCode Solutions</p>
-    <p><strong>Documento de identidad / NIT:</strong> ___________________________</p>
-    <p><strong>Dirección:</strong> ___________________________</p>
+      <!-- Encabezado -->
+      <div class="contrato-header">
+        <div class="contrato-logo">Davora <span>Tecnologies</span></div>
+        <p>Contrato de Desarrollo de Software</p>
+      </div>
 
-    <p><strong>Fecha:</strong> ____ / ____ / 20__</p>
-  </section>
+      <!-- Partes -->
+      <div class="partes-grid">
+        <div class="parte-box">
+          <h3>Cliente</h3>
+          <div class="parte-field">
+            <label>Nombre completo / Razón social</label>
+            <input class="field-line" type="text" placeholder="___________________________" />
+          </div>
+          <div class="parte-field">
+            <label>Documento de identidad / NIT</label>
+            <input class="field-line" type="text" placeholder="___________________________" />
+          </div>
+          <div class="parte-field">
+            <label>Dirección</label>
+            <input class="field-line" type="text" placeholder="___________________________" />
+          </div>
+        </div>
+        <div class="parte-box">
+          <h3>Proveedor / Desarrollador</h3>
+          <div class="parte-field">
+            <label>Nombre</label>
+            <input class="field-line" type="text" value="David Guerrero — Davora Tecnologies" readonly />
+          </div>
+          <div class="parte-field">
+            <label>Documento de identidad / NIT</label>
+            <input class="field-line" type="text" placeholder="___________________________" />
+          </div>
+          <div class="parte-field">
+            <label>Dirección</label>
+            <input class="field-line" type="text" placeholder="___________________________" />
+          </div>
+        </div>
+      </div>
 
-  <section>
-    <h2>1. Objeto del contrato</h2>
-    <p>El proveedor se compromete a desarrollar el software descrito en la propuesta técnica adjunta, cumpliendo las especificaciones, funcionalidades y plataformas acordadas.</p>
-  </section>
+      <p class="fecha-line">
+        <strong>Fecha:</strong> <span>&nbsp;</span> / <span>&nbsp;</span> / 20<span>&nbsp;</span>
+      </p>
 
-  <section>
-    <h2>2. Alcance del proyecto</h2>
-    <ul>
-      <li>Descripción: ___________________________________________</li>
-      <li>Funcionalidades principales: ____________________________</li>
-      <li>Plataforma: (Web / Móvil / Escritorio) ________________</li>
-    </ul>
-  </section>
+      <!-- Cláusulas -->
+      <div class="contrato-clausula">
+        <h2>1. Objeto del contrato</h2>
+        <p>El proveedor se compromete a desarrollar el software descrito en la propuesta técnica adjunta, cumpliendo las especificaciones, funcionalidades y plataformas acordadas.</p>
+      </div>
 
-  <section>
-    <h2>3. Plazos de entrega</h2>
-    <ul>
-      <li>Inicio del proyecto: ____ / ____ / 20__</li>
-      <li>Entrega del primer hito: ____ / ____ / 20__</li>
-      <li>Entrega final del proyecto: ____ / ____ / 20__</li>
-    </ul>
-    <p>Cada entrega incluirá documentación, manual de usuario y código fuente cuando corresponda.</p>
-  </section>
+      <div class="contrato-clausula">
+        <h2>2. Alcance del proyecto</h2>
+        <ul>
+          <li>Descripción: ___________________________________________</li>
+          <li>Funcionalidades principales: ____________________________</li>
+          <li>Plataforma: (Web / Móvil / Escritorio) ___________________</li>
+        </ul>
+      </div>
 
-  <section>
-    <h2>4. Pagos</h2>
-    <ul>
-      <li>Valor total del proyecto: $___________</li>
-      <li>Anticipo (50%): <span class="resaltar">$___________</span> a la firma del contrato</li>
-      <li>Saldo restante (50%): $___________ a la entrega final del software</li>
-    </ul>
-    <p>Forma de pago: Transferencia bancaria a:</p>
-    <p>Banco: _______________________<br>
-       Cuenta: _______________________<br>
-       Titular: _______________________</p>
-    <p>Se emitirá recibo o factura por cada pago.</p>
-  </section>
+      <div class="contrato-clausula">
+        <h2>3. Plazos de entrega</h2>
+        <ul>
+          <li>Inicio del proyecto: ____ / ____ / 20__</li>
+          <li>Entrega del primer hito: ____ / ____ / 20__</li>
+          <li>Entrega final del proyecto: ____ / ____ / 20__</li>
+        </ul>
+        <p>Cada entrega incluirá documentación, manual de usuario y código fuente cuando corresponda.</p>
+      </div>
 
-  <section>
-    <h2>5. Propiedad intelectual</h2>
-    <ul>
-      <li>El software desarrollado será propiedad del cliente una vez recibido el pago total.</li>
-      <li>Hasta que se complete el pago, el desarrollador conserva los derechos sobre el código fuente.</li>
-    </ul>
-  </section>
+      <div class="contrato-clausula">
+        <h2>4. Pagos</h2>
+        <ul>
+          <li>Valor total del proyecto: $___________</li>
+          <li>Anticipo (50%): <span class="resaltar">$___________</span> a la firma del contrato</li>
+          <li>Saldo restante (50%): $___________ a la entrega final</li>
+        </ul>
+        <p>Forma de pago: Transferencia bancaria a:</p>
+        <ul>
+          <li>Banco: _______________________</li>
+          <li>Cuenta: _______________________</li>
+          <li>Titular: _______________________</li>
+        </ul>
+        <p>Se emitirá recibo o factura por cada pago realizado.</p>
+      </div>
 
-  <section>
-    <h2>6. Garantía y soporte</h2>
-    <p>El desarrollador ofrecerá soporte técnico por un período de ___ meses tras la entrega final, incluyendo corrección de errores o fallas de programación detectadas durante el período de garantía.</p>
-  </section>
+      <div class="contrato-clausula">
+        <h2>5. Propiedad intelectual</h2>
+        <ul>
+          <li>El software desarrollado será propiedad del cliente una vez recibido el pago total.</li>
+          <li>Hasta que se complete el pago, el desarrollador conserva los derechos sobre el código fuente.</li>
+        </ul>
+      </div>
 
-  <section>
-    <h2>7. Cancelación</h2>
-    <p>Si el cliente decide cancelar el proyecto después de iniciado, el anticipo no será reembolsable.</p>
-  </section>
+      <div class="contrato-clausula">
+        <h2>6. Garantía y soporte</h2>
+        <p>El desarrollador ofrecerá soporte técnico por un período de ___ meses tras la entrega final, incluyendo corrección de errores o fallas de programación detectadas durante el período de garantía.</p>
+      </div>
 
-  <section>
-    <h2>8. Confidencialidad</h2>
-    <p>Ambas partes acuerdan mantener confidencial cualquier información compartida durante el desarrollo del proyecto.</p>
-  </section>
+      <div class="contrato-clausula">
+        <h2>7. Cancelación</h2>
+        <p>Si el cliente decide cancelar el proyecto después de iniciado, el anticipo no será reembolsable.</p>
+      </div>
 
-  <div class="firma">
-    <div>
-      <p>Cliente</p>
-      <div class="linea-firma"></div>
-      <p>Nombre y firma</p>
+      <div class="contrato-clausula">
+        <h2>8. Confidencialidad</h2>
+        <p>Ambas partes acuerdan mantener confidencial cualquier información compartida durante el desarrollo del proyecto.</p>
+      </div>
+
+      <!-- Firmas -->
+      <div class="firmas-grid">
+        <div class="firma-box">
+          <div class="firma-espacio"></div>
+          <p>Nombre y firma</p>
+          <strong>Cliente</strong>
+        </div>
+        <div class="firma-box">
+          <div class="firma-espacio"></div>
+          <p>David Guerrero</p>
+          <strong>Proveedor / Desarrollador — Davora Tecnologies</strong>
+        </div>
+      </div>
+
+      <p class="nota-legal">
+        Este documento constituye un contrato privado entre las partes. Tiene validez legal siempre que sea firmado
+        por ambas partes y puede ser utilizado como evidencia en caso de disputa.
+      </p>
+
     </div>
-    <div>
-      <p>Proveedor / Desarrollador</p>
-      <div class="linea-firma"></div>
-      <p>David Guerrero</p>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">Davora <span>Tecnologies</span></div>
+      <p class="footer-copy">© 2025 Davora Tecnologies. Todos los derechos reservados.</p>
+      <div class="footer-links">
+        <a href="contacto.html">Contacto</a>
+        <a href="sobre-mi.html">Sobre nosotros</a>
+        <a href="contrato.html">Contrato</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== CHATBOT ===== -->
+  <div class="chatbot-container" id="chatbot" role="dialog" aria-label="Chat DavBot" aria-hidden="true">
+    <div class="chatbot-header">
+      <div class="chatbot-header-info">
+        <div class="chatbot-avatar">🤖</div>
+        <div><h3>DavBot</h3><span class="chatbot-status">En línea</span></div>
+      </div>
+      <button id="closeChat" aria-label="Cerrar chat">&times;</button>
+    </div>
+    <div class="chatbot-body" id="chatBody">
+      <p class="bot-text">¡Hola! 👋 Soy <b>DavBot</b> de Davora. ¿En qué puedo ayudarte hoy?</p>
+      <div class="options">
+        <button class="option-btn">¿Por qué comprar con Davora Software?</button>
+        <button class="option-btn">¿Cuánto tarda un desarrollo?</button>
+        <button class="option-btn">¿Qué tipos de software hacen?</button>
+        <button class="option-btn">¿Puedo solicitar una demo?</button>
+      </div>
     </div>
   </div>
-
-  <p class="nota-legal">
-    Este documento constituye un contrato privado entre las partes. Tiene validez legal siempre que sea firmado por ambas partes y puede ser utilizado como evidencia en caso de disputa.
-  </p>
+  <button class="chat-toggle" id="openChat" aria-label="Abrir chat">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+  </button>
+  <a href="https://wa.me/573107864885" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+    <img src="img/whatsapp.png" alt="" class="whatsapp-icon" aria-hidden="true" />
+  </a>
 
 </body>
 </html>

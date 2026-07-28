@@ -3,79 +3,81 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="icon" href="img/favicon.png" type="image/x-icon">
-  <title>Contacto - Davora</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <meta name="description" content="Contáctanos para iniciar tu proyecto de software. Respondemos en menos de 24 horas." />
+  <link rel="icon" href="img/favicon.png" type="image/x-icon" />
+  <title>Contacto — Davora Tecnologies</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/contacto.css" />
   <script defer src="js/script.js"></script>
 </head>
 <body>
 
-  <!-- 🔹 SIDEBAR -->
-  <aside class="sidebar" id="sidebar">
-    <div class="sidebar-content">
-      <nav class="sidebar-nav">
-        <a href="index.html#inicio" class="sidebar-link">
-          <span class="sidebar-icon">🏠</span>
-          <span class="sidebar-text">Inicio</span>
-        </a>
-        <a href="index.html#servicios" class="sidebar-link">
-          <span class="sidebar-icon">⚙️</span>
-          <span class="sidebar-text">Servicios</span>
-        </a>
-        <a href="index.html#tecnologias" class="sidebar-link">
-          <span class="sidebar-icon">💻</span>
-          <span class="sidebar-text">Tecnologías</span>
-        </a>
-        <a href="sobre-mi.html" class="sidebar-link">
-          <span class="sidebar-icon">👤</span>
-          <span class="sidebar-text">Sobre nosotros</span>
-        </a>
-        <a href="contacto.html" class="sidebar-link active">
-          <span class="sidebar-icon">📞</span>
-          <span class="sidebar-text">Contacto</span>
-        </a>
-      </nav>
-    </div>
+  <!-- ===== SIDEBAR ===== -->
+  <aside class="sidebar" id="sidebar" aria-label="Menú lateral">
+    <div class="sidebar-logo">Davora <span>T.</span></div>
+    <nav class="sidebar-nav">
+      <a href="index.html#inicio" class="sidebar-link">
+        <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <span class="sidebar-text">Inicio</span>
+      </a>
+      <a href="index.html#servicios" class="sidebar-link">
+        <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 010 14.14M4.93 4.93a10 10 0 000 14.14"/></svg>
+        <span class="sidebar-text">Servicios</span>
+      </a>
+      <a href="index.html#tecnologias" class="sidebar-link">
+        <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        <span class="sidebar-text">Tecnologías</span>
+      </a>
+      <a href="sobre-mi.html" class="sidebar-link">
+        <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        <span class="sidebar-text">Sobre nosotros</span>
+      </a>
+      <a href="contacto.html" class="sidebar-link active">
+        <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.18 1.18 2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.09a16 16 0 006 6l.46-.46a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        <span class="sidebar-text">Contacto</span>
+      </a>
+    </nav>
   </aside>
 
-  <!-- 🔹 HEADER -->
-  <header class="header">
+  <!-- ===== HEADER ===== -->
+  <header class="header" id="header">
     <nav class="navbar">
       <div class="navbar-brand">
-        <button class="sidebar-toggle" id="sidebarToggle">
-          <span></span>
-          <span></span>
-          <span></span>
+        <button class="sidebar-toggle" id="sidebarToggle" aria-label="Abrir menú">
+          <span></span><span></span><span></span>
         </button>
-        <a href="index.html" class="logo">DavCode <span>Solutions</span></a>
+        <a href="index.html" class="logo">Davora <span>Tecnologies</span></a>
       </div>
       <ul class="nav-links">
         <li><a href="index.html#inicio">Inicio</a></li>
         <li><a href="index.html#servicios">Servicios</a></li>
         <li><a href="index.html#tecnologias">Tecnologías</a></li>
         <li><a href="sobre-mi.html">Sobre nosotros</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="contacto.html" class="nav-cta active-link">Contacto</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- 🔹 HERO CONTACTO -->
+  <!-- ===== HERO ===== -->
   <section class="contact-hero">
     <div class="hero-overlay"></div>
     <div class="hero-content">
+      <div class="hero-badge"><span class="badge-dot"></span>Estamos aquí para ti</div>
       <h1 class="hero-title">¿Listo para transformar tu negocio?</h1>
-      <p class="hero-subtitle">Estamos aquí para escucharte y ayudarte a llevar tus ideas al siguiente nivel</p>
+      <p class="hero-subtitle">Escríbenos y llevamos tus ideas al siguiente nivel. Respondemos en menos de 24 horas.</p>
     </div>
   </section>
 
-  <!-- 🔹 FORMULARIO Y INFO DE CONTACTO -->
+  <!-- ===== FORMULARIO + INFO ===== -->
   <section class="contact-section">
     <div class="contact-container">
-      
-      <!-- COLUMNA IZQ: INFO DE CONTACTO -->
-      <div class="contact-info fade-up">
+
+      <!-- Info -->
+      <div class="contact-info reveal">
         <h2>Información de Contacto</h2>
-        
         <div class="contact-item">
           <div class="contact-icon">📧</div>
           <div class="contact-details">
@@ -83,7 +85,6 @@
             <a href="mailto:dcodes@gmail.com">dcodes@gmail.com</a>
           </div>
         </div>
-
         <div class="contact-item">
           <div class="contact-icon">📱</div>
           <div class="contact-details">
@@ -91,103 +92,68 @@
             <a href="tel:+573107864885">+57 310 786 4885</a>
           </div>
         </div>
-
         <div class="contact-item">
           <div class="contact-icon">💬</div>
           <div class="contact-details">
             <h3>WhatsApp</h3>
-            <a href="https://wa.me/573107864885" target="_blank">Chatea con nosotros</a>
+            <a href="https://wa.me/573107864885" target="_blank" rel="noopener">Chatea con nosotros</a>
           </div>
         </div>
-
         <div class="contact-item">
           <div class="contact-icon">⏰</div>
           <div class="contact-details">
             <h3>Horarios de Atención</h3>
-            <p>Lunes a Viernes: 9:00 AM - 6:00 PM</p>
-            <p>Sábados: 10:00 AM - 3:00 PM</p>
+            <p>Lunes a Viernes: 9:00 AM – 6:00 PM</p>
+            <p>Sábados: 10:00 AM – 3:00 PM</p>
           </div>
         </div>
-
         <div class="social-links">
-          <a href="https://wa.me/573107864885" class="social-btn whatsapp-btn" target="_blank">
-            <span>WhatsApp</span>
-          </a>
-          <a href="mailto:dcodes@gmail.com" class="social-btn email-btn">
-            <span>Enviar Email</span>
-          </a>
+          <a href="https://wa.me/573107864885" class="social-btn whatsapp-btn" target="_blank" rel="noopener">WhatsApp</a>
+          <a href="mailto:dcodes@gmail.com" class="social-btn email-btn">Enviar Email</a>
         </div>
       </div>
 
-      <!-- COLUMNA DER: FORMULARIO -->
-      <div class="contact-form fade-up delay-1">
+      <!-- Formulario -->
+      <div class="contact-form reveal reveal-delay-1">
         <h2>Envíanos tu Mensaje</h2>
-        <form id="contactForm">
+        <form id="contactForm" novalidate>
           <div class="form-group">
-            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required />
           </div>
-
           <div class="form-group">
-            <input type="email" id="email" name="email" placeholder="Tu correo electrónico" required>
+            <input type="email" id="email" name="email" placeholder="Tu correo electrónico" required />
           </div>
-
           <div class="form-group">
-            <input type="tel" id="telefono" name="telefono" placeholder="Tu teléfono (opcional)">
+            <input type="tel" id="telefono" name="telefono" placeholder="Tu teléfono (opcional)" />
           </div>
-
           <div class="form-group">
-            <input type="text" id="empresa" name="empresa" placeholder="Nombre de tu empresa (opcional)">
+            <input type="text" id="empresa" name="empresa" placeholder="Nombre de tu empresa (opcional)" />
           </div>
-
           <div class="form-group full-width">
             <label class="form-label">¿Qué te interesa?</label>
             <div class="checkbox-group">
-              <label class="checkbox-item">
-                <input type="checkbox" name="interes" value="demo">
-                <span class="checkbox-custom"></span>
-                <span>Adquirir una demo gratuita</span>
-              </label>
-              <label class="checkbox-item">
-                <input type="checkbox" name="interes" value="desarrollo">
-                <span class="checkbox-custom"></span>
-                <span>Desarrollar una aplicación personalizada</span>
-              </label>
-              <label class="checkbox-item">
-                <input type="checkbox" name="interes" value="sitio-web">
-                <span class="checkbox-custom"></span>
-                <span>Crear un sitio web profesional</span>
-              </label>
-              <label class="checkbox-item">
-                <input type="checkbox" name="interes" value="ecommerce">
-                <span class="checkbox-custom"></span>
-                <span>Desarrollar una tienda online</span>
-              </label>
-              <label class="checkbox-item">
-                <input type="checkbox" name="interes" value="mantenimiento">
-                <span class="checkbox-custom"></span>
-                <span>Mantenimiento y soporte técnico</span>
-              </label>
-              <label class="checkbox-item">
-                <input type="checkbox" name="interes" value="consulta">
-                <span class="checkbox-custom"></span>
-                <span>Consulta técnica</span>
-              </label>
+              <label class="checkbox-item"><input type="checkbox" name="interes" value="demo"><span class="checkbox-custom"></span><span>Adquirir una demo gratuita</span></label>
+              <label class="checkbox-item"><input type="checkbox" name="interes" value="desarrollo"><span class="checkbox-custom"></span><span>Desarrollar una aplicación personalizada</span></label>
+              <label class="checkbox-item"><input type="checkbox" name="interes" value="sitio-web"><span class="checkbox-custom"></span><span>Crear un sitio web profesional</span></label>
+              <label class="checkbox-item"><input type="checkbox" name="interes" value="ecommerce"><span class="checkbox-custom"></span><span>Desarrollar una tienda online</span></label>
+              <label class="checkbox-item"><input type="checkbox" name="interes" value="mantenimiento"><span class="checkbox-custom"></span><span>Mantenimiento y soporte técnico</span></label>
+              <label class="checkbox-item"><input type="checkbox" name="interes" value="consulta"><span class="checkbox-custom"></span><span>Consulta técnica</span></label>
             </div>
           </div>
-
           <div class="form-group full-width">
-            <textarea id="mensaje" name="mensaje" placeholder="Cuéntanos sobre tu proyecto o necesidad..." rows="6" required></textarea>
+            <textarea id="mensaje" name="mensaje" placeholder="Cuéntanos sobre tu proyecto o necesidad..." rows="5" required></textarea>
           </div>
-
           <div class="form-group full-width">
             <label class="checkbox-item">
-              <input type="checkbox" name="terminos" required>
+              <input type="checkbox" name="terminos" required />
               <span class="checkbox-custom"></span>
               <span>Acepto los términos y condiciones</span>
             </label>
           </div>
-
-          <button type="submit" class="btn btn-primary full-width">Enviar Mensaje</button>
+          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:8px;">
+            Enviar Mensaje
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
         </form>
         <p class="form-note">Nos pondremos en contacto dentro de 24 horas</p>
       </div>
@@ -195,36 +161,39 @@
     </div>
   </section>
 
-  <!-- 🔹 SECCIÓN DE BENEFICIOS -->
+  <!-- ===== BENEFICIOS ===== -->
   <section class="contact-benefits">
-    <h2 class="section-title">¿Por qué contactarnos?</h2>
+    <div class="section-header reveal">
+      <span class="section-label section-label--light">Por qué elegirnos</span>
+      <h2 class="section-title section-title--light">¿Por qué contactarnos?</h2>
+    </div>
     <div class="benefits-grid">
-      <div class="benefit-card fade-up">
+      <div class="benefit-card reveal">
         <div class="benefit-icon">⚡</div>
         <h3>Respuesta Rápida</h3>
         <p>Te respondemos dentro de 24 horas con una solución personalizada a tu consulta.</p>
       </div>
-      <div class="benefit-card fade-up delay-1">
+      <div class="benefit-card reveal reveal-delay-1">
         <div class="benefit-icon">🎯</div>
         <h3>Soluciones Personalizadas</h3>
         <p>No hay dos negocios iguales, adaptamos nuestros servicios a tus necesidades específicas.</p>
       </div>
-      <div class="benefit-card fade-up delay-2">
+      <div class="benefit-card reveal reveal-delay-2">
         <div class="benefit-icon">💰</div>
         <h3>Precios Competitivos</h3>
         <p>Ofrecemos la mejor relación calidad-precio del mercado en desarrollo web y aplicaciones.</p>
       </div>
-      <div class="benefit-card fade-up delay-3">
+      <div class="benefit-card reveal reveal-delay-3">
         <div class="benefit-icon">🤝</div>
         <h3>Equipo Profesional</h3>
-        <p>Trabajamos con desarrolladores expertos con años de experiencia en el industria.</p>
+        <p>Trabajamos con desarrolladores expertos con años de experiencia en la industria.</p>
       </div>
-      <div class="benefit-card fade-up delay-4">
+      <div class="benefit-card reveal">
         <div class="benefit-icon">🔒</div>
         <h3>Confidencialidad Garantizada</h3>
         <p>Tu información y proyectos están completamente seguros con nosotros.</p>
       </div>
-      <div class="benefit-card fade-up delay-5">
+      <div class="benefit-card reveal reveal-delay-1">
         <div class="benefit-icon">📞</div>
         <h3>Soporte Continuo</h3>
         <p>Después del desarrollo, te brindamos soporte técnico y mantenimiento permanente.</p>
@@ -232,92 +201,60 @@
     </div>
   </section>
 
-  <!-- 🔹 FOOTER -->
+  <!-- ===== FOOTER ===== -->
   <footer class="footer">
-    <p>© 2025 DavCode Solutions. Todos los derechos reservados.</p>
+    <div class="footer-inner">
+      <div class="footer-brand">Davora <span>Tecnologies</span></div>
+      <p class="footer-copy">© 2025 Davora Tecnologies. Todos los derechos reservados.</p>
+      <div class="footer-links">
+        <a href="contacto.html">Contacto</a>
+        <a href="sobre-mi.html">Sobre nosotros</a>
+        <a href="contrato.html">Contrato</a>
+      </div>
+    </div>
   </footer>
 
-  <!-- 🔹 CHATBOT -->
-  <div class="chatbot-container" id="chatbot">
+  <!-- ===== CHATBOT ===== -->
+  <div class="chatbot-container" id="chatbot" role="dialog" aria-label="Chat DavBot" aria-hidden="true">
     <div class="chatbot-header">
-      <h3>🤖 DavBot</h3>
-      <button id="closeChat">&times;</button>
+      <div class="chatbot-header-info">
+        <div class="chatbot-avatar">🤖</div>
+        <div><h3>DavBot</h3><span class="chatbot-status">En línea</span></div>
+      </div>
+      <button id="closeChat" aria-label="Cerrar chat">&times;</button>
     </div>
     <div class="chatbot-body" id="chatBody">
-      <p class="bot-text">¡Hola! 👋 Soy <b>DavBot</b> de DavCode Solutions. ¿En qué puedo ayudarte hoy?</p>
+      <p class="bot-text">¡Hola! 👋 Soy <b>DavBot</b> de Davora. ¿En qué puedo ayudarte hoy?</p>
       <div class="options">
-        <button class="option-btn">¿Por qué comprar con DavCode Solutions?</button>
+        <button class="option-btn">¿Por qué comprar con Davora Software?</button>
         <button class="option-btn">¿Cuánto tarda un desarrollo?</button>
         <button class="option-btn">¿Qué tipos de software hacen?</button>
         <button class="option-btn">¿Puedo solicitar una demo?</button>
       </div>
     </div>
   </div>
-
-  <!-- 🔹 BOTÓN FLOTANTE -->
-  <button class="chat-toggle" id="openChat">💬</button>
-
-  <!-- 🔹 BOTÓN WHATSAPP -->
-  <a href="https://wa.me/573107864885" class="whatsapp-float" target="_blank" title="Chatea con nosotros en WhatsApp">
-    <img src="img/whatsapp.png" alt="WhatsApp" class="whatsapp-icon">
+  <button class="chat-toggle" id="openChat" aria-label="Abrir chat">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+  </button>
+  <a href="https://wa.me/573107864885" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+    <img src="img/whatsapp.png" alt="" class="whatsapp-icon" aria-hidden="true" />
   </a>
 
   <script>
-    // Sidebar Toggle
-    const sidebar = document.getElementById('sidebar');
-    const sidebarToggle = document.getElementById('sidebarToggle');
-    
-    sidebarToggle.addEventListener('click', () => {
-      sidebar.classList.toggle('active');
-    });
-
-    // Cerrar sidebar al hacer click en un link
-    document.querySelectorAll('.sidebar-link').forEach(link => {
-      link.addEventListener('click', () => {
-        sidebar.classList.remove('active');
-      });
-    });
-
-    // Sidebar auto-hide cuando no hay mouse cerca
-    let sidebarTimeout;
-    document.addEventListener('mousemove', (e) => {
-      if (sidebar.classList.contains('active')) {
-        clearTimeout(sidebarTimeout);
-        
-        if (e.clientX > 250) {
-          sidebarTimeout = setTimeout(() => {
-            sidebar.classList.remove('active');
-          }, 3000);
-        }
-      }
-    });
-
-    // Formulario de contacto
+    // Formulario → WhatsApp
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
       contactForm.addEventListener('submit', function(e) {
         e.preventDefault();
-        
-        // Obtener datos del formulario
-        const nombre = document.getElementById('nombre').value;
-        const email = document.getElementById('email').value;
+        const nombre   = document.getElementById('nombre').value;
+        const email    = document.getElementById('email').value;
         const telefono = document.getElementById('telefono').value;
-        const empresa = document.getElementById('empresa').value;
-        const mensaje = document.getElementById('mensaje').value;
-        
-        // Obtener intereses seleccionados
+        const empresa  = document.getElementById('empresa').value;
+        const mensaje  = document.getElementById('mensaje').value;
         const intereses = Array.from(document.querySelectorAll('input[name="interes"]:checked'))
-          .map(checkbox => checkbox.value)
-          .join(', ');
-
-        // Crear mensaje para WhatsApp
-        const mensajeWhatsApp = `Hola DavCode Solutions, me gustaría contactarlos:\n\nNombre: ${nombre}\nEmail: ${email}\nTeléfono: ${telefono}\nEmpresa: ${empresa}\n\nMe interesa: ${intereses || 'Consulta general'}\n\nMensaje: ${mensaje}`;
-
-        // Redirigir a WhatsApp
-        const urlWhatsApp = `https://wa.me/573107864885?text=${encodeURIComponent(mensajeWhatsApp)}`;
-        window.open(urlWhatsApp, '_blank');
-
-        // Limpiar formulario
+          .map(cb => cb.value).join(', ');
+        const txt = `Hola Davora Tecnologies, me gustaría contactarlos:\n\nNombre: ${nombre}\nEmail: ${email}\nTeléfono: ${telefono}\nEmpresa: ${empresa}\n\nMe interesa: ${intereses || 'Consulta general'}\n\nMensaje: ${mensaje}`;
+        window.open(`https://wa.me/573107864885?text=${encodeURIComponent(txt)}`, '_blank');
         contactForm.reset();
       });
     }

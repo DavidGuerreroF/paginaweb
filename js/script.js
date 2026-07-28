@@ -1,116 +1,187 @@
-// Animaciones al hacer scroll para otras secciones
-const animatedElements = document.querySelectorAll('.fade-up, .fade-in');
+/* ===================================================
+   Davora Tecnologies — script.js
+   =================================================== */
 
-// Eliminamos del hero para que cargue instantáneo
-const filteredElements = Array.from(animatedElements).filter(el => !el.closest('.hero'));
+/* ===== NAVBAR SHRINK ON SCROLL ===== */
+const header = document.getElementById('header');
 
-const observer = new IntersectionObserver((entries) => {
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 40) {
+    header.classList.add('scrolled');
+  } else {
+    header.classList.remove('scrolled');
+  }
+}, { passive: true });
+
+
+/* ===== ACTIVE NAV LINK ON SCROLL ===== */
+const sections   = document.querySelectorAll('section[id]');
+const navLinks   = document.querySelectorAll('.nav-links a');
+const sideLinks  = document.querySelectorAll('.sidebar-link');
+
+function updateActiveLink() {
+  const scrollY = window.scrollY + 100;
+
+  sections.forEach(section => {
+    const top    = section.offsetTop;
+    const height = section.offsetHeight;
+    const id     = section.getAttribute('id');
+
+    if (scrollY >= top && scrollY < top + height) {
+      navLinks.forEach(a => {
+        a.classList.toggle('active-link', a.getAttribute('href') === `#${id}`);
+      });
+      sideLinks.forEach(a => {
+        a.classList.toggle('active', a.getAttribute('href') === `#${id}`);
+      });
+    }
+  });
+}
+
+window.addEventListener('scroll', updateActiveLink, { passive: true });
+updateActiveLink(); // run once on load
+
+
+/* ===== SCROLL REVEAL ===== */
+const revealEls = document.querySelectorAll('.reveal');
+
+const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add('visible');
+      revealObserver.unobserve(entry.target); // animate once
     }
   });
-});
+}, { threshold: 0.12 });
 
-filteredElements.forEach(el => observer.observe(el));
+revealEls.forEach(el => revealObserver.observe(el));
 
-// ===== SIDEBAR NAVIGATION =====
+
+/* ===== STAT COUNTER ANIMATION ===== */
+const statNumbers = document.querySelectorAll('.stat-number[data-count]');
+
+const countObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    const el    = entry.target;
+    const end   = parseInt(el.dataset.count, 10);
+    const dur   = 1600; // ms
+    const step  = Math.ceil(end / (dur / 16));
+    let current = 0;
+
+    const tick = () => {
+      current = Math.min(current + step, end);
+      el.textContent = current;
+      if (current < end) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+    countObserver.unobserve(el);
+  });
+}, { threshold: 0.5 });
+
+statNumbers.forEach(el => countObserver.observe(el));
+
+
+/* ===== SIDEBAR ===== */
 document.addEventListener('DOMContentLoaded', () => {
-  const sidebar = document.getElementById('sidebar');
+  const sidebar       = document.getElementById('sidebar');
   const sidebarToggle = document.getElementById('sidebarToggle');
-  const sidebarLinks = document.querySelectorAll('.sidebar-link');
+  let   sidebarTimer;
 
-  // Toggle sidebar
+  if (!sidebar || !sidebarToggle) return;
+
+  // Toggle open/close
   sidebarToggle.addEventListener('click', () => {
     sidebar.classList.toggle('active');
   });
 
-  // Cerrar sidebar al hacer click en un link
-  sidebarLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-      // Si no es un link externo, cierra el sidebar
-      if (!link.href.includes('http') && !link.href.includes('.html')) {
-        sidebar.classList.remove('active');
-      }
-      // Actualizar active state
-      sidebarLinks.forEach(l => l.classList.remove('active'));
-      link.classList.add('active');
+  // Close when clicking a sidebar link
+  sideLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      sidebar.classList.remove('active');
     });
   });
 
-  // Auto-hide sidebar cuando el mouse se aleja
-  let sidebarTimeout;
-  document.addEventListener('mousemove', (e) => {
-    if (sidebar.classList.contains('active')) {
-      clearTimeout(sidebarTimeout);
-
-      // Si el mouse está fuera del sidebar por más de 3 segundos, lo cierra
-      if (e.clientX > 280) {
-        sidebarTimeout = setTimeout(() => {
-          sidebar.classList.remove('active');
-        }, 3000);
-      }
-    }
-  });
-
-  // Cerrar sidebar si hace click fuera de él
+  // Close when clicking outside
   document.addEventListener('click', (e) => {
-    if (sidebar.classList.contains('active') && 
-        !sidebar.contains(e.target) && 
-        !sidebarToggle.contains(e.target)) {
+    if (
+      sidebar.classList.contains('active') &&
+      !sidebar.contains(e.target) &&
+      !sidebarToggle.contains(e.target)
+    ) {
       sidebar.classList.remove('active');
     }
   });
+
+  // Auto-hide after 3 s when mouse moves away
+  document.addEventListener('mousemove', (e) => {
+    if (!sidebar.classList.contains('active')) return;
+    clearTimeout(sidebarTimer);
+    if (e.clientX > 270) {
+      sidebarTimer = setTimeout(() => sidebar.classList.remove('active'), 3000);
+    }
+  }, { passive: true });
 });
 
-// ===== CHATBOT SIMPLE DAVCODE SOLUTIONS =====
-document.addEventListener("DOMContentLoaded", () => {
-  const openChat = document.getElementById("openChat");
-  const closeChat = document.getElementById("closeChat");
-  const chatBox = document.getElementById("chatbot");
-  const chatBody = document.getElementById("chatBody");
 
-  openChat.addEventListener("click", () => {
-    chatBox.style.display = "block";
-    openChat.style.display = "none";
+/* ===== CHATBOT ===== */
+document.addEventListener('DOMContentLoaded', () => {
+  const openBtn  = document.getElementById('openChat');
+  const closeBtn = document.getElementById('closeChat');
+  const chatBox  = document.getElementById('chatbot');
+  const chatBody = document.getElementById('chatBody');
+
+  if (!openBtn || !closeBtn || !chatBox) return;
+
+  openBtn.addEventListener('click', () => {
+    chatBox.style.display = 'block';
+    chatBox.setAttribute('aria-hidden', 'false');
+    openBtn.style.display = 'none';
+    chatBody.scrollTop = chatBody.scrollHeight;
   });
 
-  closeChat.addEventListener("click", () => {
-    chatBox.style.display = "none";
-    openChat.style.display = "block";
+  closeBtn.addEventListener('click', () => {
+    chatBox.style.display = 'none';
+    chatBox.setAttribute('aria-hidden', 'true');
+    openBtn.style.display = 'flex';
   });
 
-  const respuestas = {
-    "¿Por qué comprar con DavCode Solutions?": "Porque ofrecemos soluciones personalizadas, soporte continuo y desarrollos modernos adaptados a tu negocio a bajo costo.",
-    "¿Cuánto tarda un desarrollo?": "Depende del tipo de proyecto. Un desarrollo web promedio puede tardar entre 2 y 6 semanas.",
-    "¿Qué tipos de software hacen?": "Desarrollamos sistemas de gestión, inventarios, tiendas online, aplicaciones web y más.",
-    "¿Puedo solicitar una demo?": "¡Claro! Escríbenos por WhatsApp o en la sección de contacto y te mostraremos una demo en vivo del software que estes interesado. 📱"
+  const responses = {
+    '¿Por qué comprar con Davora Software?':
+      'Porque ofrecemos soluciones personalizadas, soporte continuo y desarrollos modernos adaptados a tu negocio a bajo costo.',
+    '¿Cuánto tarda un desarrollo?':
+      'Depende del tipo de proyecto. Un desarrollo web promedio puede tardar entre 2 y 6 semanas.',
+    '¿Qué tipos de software hacen?':
+      'Desarrollamos sistemas de gestión, inventarios, tiendas online, aplicaciones web y más.',
+    '¿Puedo solicitar una demo?':
+      '¡Claro! Escríbenos por WhatsApp o en la sección de contacto y te mostraremos una demo en vivo del software que te interese. 📱'
   };
 
-  document.querySelectorAll(".option-btn").forEach(btn => {
-    btn.addEventListener("click", () => {
-      const pregunta = btn.textContent;
-      const respuesta = respuestas[pregunta];
+  document.querySelectorAll('.option-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const question = btn.textContent.trim();
+      const answer   = responses[question];
+      if (!answer) return;
 
-      // Mostrar la pregunta
-      const userMsg = document.createElement("p");
-      userMsg.classList.add("user-text");
-      userMsg.textContent = pregunta;
-      chatBody.appendChild(userMsg);
+      // User bubble
+      appendMessage(chatBody, question, 'user-text');
 
-      // Mostrar la respuesta del bot
-      setTimeout(() => {
-        const botMsg = document.createElement("p");
-        botMsg.classList.add("bot-text");
-        botMsg.textContent = respuesta;
-        chatBody.appendChild(botMsg);
-        chatBody.scrollTop = chatBody.scrollHeight;
-      }, 500);
-
-      // Deshabilitar el botón después de hacer click
+      // Disable button
       btn.disabled = true;
-      btn.style.opacity = "0.5";
-      btn.style.cursor = "not-allowed";
+
+      // Bot reply with slight delay
+      setTimeout(() => {
+        appendMessage(chatBody, answer, 'bot-text');
+        chatBody.scrollTop = chatBody.scrollHeight;
+      }, 480);
     });
   });
 });
+
+function appendMessage(container, text, className) {
+  const p = document.createElement('p');
+  p.className = className;
+  p.textContent = text;
+  container.appendChild(p);
+  container.scrollTop = container.scrollHeight;
+}

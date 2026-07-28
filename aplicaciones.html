@@ -3,217 +3,301 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Catálogo de Aplicaciones - Davora Tecnologies</title>
-  <link rel="icon" href="img/favicon.png" type="image/x-icon">
-  <link rel="stylesheet" href="css/style.css" />
+  <meta name="description" content="Catálogo de aplicaciones de Davora Tecnologies. Soluciones listas para usar para tu negocio." />
+  <link rel="icon" href="img/favicon.png" type="image/x-icon" />
+  <title>Aplicaciones — Davora Tecnologies</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/aplicaciones.css" />
+  <script defer src="js/script.js"></script>
   <style>
-    body {
-      font-family: "Poppins", sans-serif;
-      background-color: #f9f9f9;
-      margin: 0;
-      color: #333;
-    }
-
-    header {
-      background-color: #000000;
-      padding: 15px 40px;
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 1000;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-
-    .navbar {
+    /* ── Hero interno ── */
+    .page-hero {
+      background: url('img/microsoft.jpg') center/cover no-repeat;
+      min-height: 52vh;
+      position: relative;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-    }
-
-    .navbar .logo {
-      font-weight: 700;
-      font-size: 1.5rem;
-      color: #fff;
-    }
-
-    .nav-links {
-      list-style: none;
-      display: flex;
-      gap: 20px;
-    }
-
-    .nav-links a {
-      text-decoration: none;
-      color: #fff;
-      font-weight: 500;
-      transition: color 0.3s;
-    }
-
-    .nav-links a:hover {
-      color: #eafaf1;
-    }
-
-    main {
-      padding: 120px 40px;
-      max-width: 1000px;
-      margin: auto;
+      justify-content: center;
       text-align: center;
+      color: #fff;
+      margin-top: var(--header-h);
     }
+    .page-hero .hero-overlay { background: linear-gradient(135deg, rgba(13,13,26,.85), rgba(124,58,237,.3)); }
+    .page-hero .hero-content  { position: relative; z-index: 2; padding: 0 24px; }
+    .page-hero .hero-title    { font-size: clamp(1.8em,4vw,3em); font-weight: 900; letter-spacing:-1px; margin-bottom:14px; }
+    .page-hero .hero-subtitle { font-size: clamp(.95em,1.6vw,1.15em); color:rgba(255,255,255,.8); max-width:580px; margin:0 auto; }
 
-    h1 {
-      color: #1abc9c;
-      font-size: 2.2rem;
-      margin-bottom: 10px;
+    /* ── Catálogo ── */
+    .catalogo-section {
+      padding: 100px 40px;
+      background: var(--gray-100);
     }
-
-    p.sub {
-      font-size: 1.1rem;
-      color: #000000;
-      margin-bottom: 40px;
-    }
-
-    .catalogo {
+    .catalogo-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 32px;
+      max-width: 1100px;
+      margin: 0 auto;
     }
-
     .app-card {
-      background-color: #fff;
-      border-radius: 12px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      background: #fff;
+      border-radius: var(--radius-md);
       overflow: hidden;
-      transition: transform 0.3s ease;
+      border: 1px solid rgba(168,85,247,.1);
+      box-shadow: var(--shadow-sm);
+      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+      display: flex;
+      flex-direction: column;
     }
-
     .app-card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-10px);
+      box-shadow: 0 20px 48px rgba(168,85,247,.18);
+      border-color: rgba(168,85,247,.35);
     }
-
-    .app-card img {
-      width: 100%;
-      height: 180px;
+    .app-card-img {
+      position: relative;
+      overflow: hidden;
+      height: 200px;
+    }
+    .app-card-img img {
+      width: 100%; height: 100%;
       object-fit: cover;
+      transition: transform .5s ease;
     }
+    .app-card:hover .app-card-img img { transform: scale(1.06); }
 
-    .app-card h3 {
-      margin: 15px 0 5px;
-      color: #333;
+    .app-card-body {
+      padding: 24px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
     }
-
-    .app-card p {
-      padding: 0 15px;
-      font-size: 0.95rem;
-      color: #555;
-      text-align: justify;
+    .app-card-body h3 {
+      font-size: 1.12em;
+      font-weight: 700;
+      color: var(--text-dark);
     }
-
-    .etiquetas {
-      padding: 10px 15px;
-      font-size: 0.85rem;
-      color: #1abc9c;
+    .app-card-body p {
+      font-size: .91em;
+      color: var(--gray-600);
+      line-height: 1.65;
+      flex: 1;
+    }
+    .app-card-meta {
+      font-size: .82em;
+      color: var(--gray-400);
+      line-height: 1.7;
+    }
+    .app-card-meta strong { color: var(--purple); }
+    .app-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 4px;
+    }
+    .app-tag {
+      font-size: .74em;
       font-weight: 600;
+      color: var(--purple);
+      background: rgba(168,85,247,.1);
+      border: 1px solid rgba(168,85,247,.2);
+      border-radius: 50px;
+      padding: 2px 10px;
+    }
+    .app-card-footer {
+      padding: 0 24px 24px;
+    }
+    .app-card-footer .btn {
+      width: 100%;
+      justify-content: center;
     }
 
-    /* BOTONES AZUL AGUAMARINA */
-    .btn {
-      display: inline-block;
-      margin: 20px 0 30px;
-      background-color: #1abc9c; /* azul aguamarina */
+    /* Próximamente badge */
+    .soon-badge {
+      position: absolute;
+      top: 14px; right: 14px;
+      background: rgba(168,85,247,.85);
       color: #fff;
-      padding: 10px 20px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 500;
-      transition: background 0.3s;
-      cursor: pointer;
+      font-size: .74em;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 50px;
+      backdrop-filter: blur(4px);
     }
 
-    .btn:hover {
-      background-color: #17a689; /* azul aguamarina más oscuro al pasar mouse */
-    }
-
-    footer {
-      background-color: #000000;
-      color: #fff;
-      text-align: center;
-      padding: 20px 10px;
-      margin-top: 60px;
-    }
-
-    footer p {
-      margin: 5px 0;
-      font-size: 0.95rem;
-    }
-
-    footer a {
-      color: #1abc9c;
-      text-decoration: none;
-      font-weight: 500;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
+    @media(max-width:768px){
+      .catalogo-section { padding: 70px 20px; }
+      .catalogo-grid    { grid-template-columns: 1fr; max-width: 420px; }
     }
   </style>
 </head>
 <body>
-  <header>
+
+  <!-- ===== SIDEBAR ===== -->
+  <aside class="sidebar" id="sidebar" aria-label="Menú lateral">
+    <div class="sidebar-logo">Davora <span>T.</span></div>
+    <nav class="sidebar-nav">
+      <a href="index.html#inicio" class="sidebar-link">
+        <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <span class="sidebar-text">Inicio</span>
+      </a>
+      <a href="index.html#servicios" class="sidebar-link active">
+        <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 010 14.14M4.93 4.93a10 10 0 000 14.14"/></svg>
+        <span class="sidebar-text">Servicios</span>
+      </a>
+      <a href="index.html#tecnologias" class="sidebar-link">
+        <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        <span class="sidebar-text">Tecnologías</span>
+      </a>
+      <a href="sobre-mi.html" class="sidebar-link">
+        <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        <span class="sidebar-text">Sobre nosotros</span>
+      </a>
+      <a href="contacto.html" class="sidebar-link">
+        <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.18 1.18 2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.09a16 16 0 006 6l.46-.46a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        <span class="sidebar-text">Contacto</span>
+      </a>
+    </nav>
+  </aside>
+
+  <!-- ===== HEADER ===== -->
+  <header class="header" id="header">
     <nav class="navbar">
-      <div class="logo">Davora Tecnologies</div>
+      <div class="navbar-brand">
+        <button class="sidebar-toggle" id="sidebarToggle" aria-label="Abrir menú">
+          <span></span><span></span><span></span>
+        </button>
+        <a href="index.html" class="logo">Davora <span>Tecnologies</span></a>
+      </div>
       <ul class="nav-links">
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="catalogo.html">Catálogo</a></li>
-        <li><a href="#contacto">Contacto</a></li>
+        <li><a href="index.html#inicio">Inicio</a></li>
+        <li><a href="index.html#servicios" class="active-link">Servicios</a></li>
+        <li><a href="index.html#tecnologias">Tecnologías</a></li>
+        <li><a href="sobre-mi.html">Sobre nosotros</a></li>
+        <li><a href="contacto.html" class="nav-cta">Contacto</a></li>
       </ul>
     </nav>
   </header>
 
-  <main>
-    <h1>Catálogo de Aplicaciones</h1>
-    <p class="sub">Explora nuestras soluciones tecnológicas desarrolladas para empresas, restaurantes y tiendas.</p>
+  <!-- ===== HERO ===== -->
+  <section class="page-hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-badge"><span class="badge-dot"></span>Soluciones listas para usar</div>
+      <h1 class="hero-title">Catálogo de Aplicaciones</h1>
+      <p class="hero-subtitle">Explora nuestras soluciones desarrolladas para empresas, restaurantes y tiendas.</p>
+    </div>
+  </section>
 
-    <div class="catalogo">
-      <!-- App principal -->
-      <div class="app-card">
-        <img src="img/ades.jpg" alt="Ades Software" />
-        <h3>Ades - Sistema de Despachos</h3>
-        <p>
-          Ades es una solución integral desarrollada por Davora Tecnologies para negocios con poco control en su inventario y dificil manejo en sus despachos, ideal para restaurantes, tiendas, farmacias, florerías, panaderías y empresas de logística. Administra insumos, pedidos, clientes, vendedores, menu, cuadre de caja y despachos de forma eficiente y centralizada.
-          <br><br><strong>Versión:</strong> 1.0  
-          <br><strong>Plataforma:</strong> Escritorio. 
-          <br><strong>Tecnología:</strong> Java + JavaFX
-        </p>
-        <div class="etiquetas">#Gestión #Pedidos #Restaurantes #Inventario #IU Sencilla</div>
-        <a class="btn" 
-           href="https://wa.me/573107864885?text=Hola%20quiero%20obtener%20una%20demo%20gratuita%20del%20sistema%20ADES" 
-           target="_blank">
-           Obtén tu demo gratuita ahora mismo
-        </a>
-      </div>
-
-      <!-- Segunda app -->
-      <div class="app-card">
-        <img src="img/futuro.jpg" alt="Futuras aplicaciones" />
-        <h3>Próximamente más aplicaciones</h3>
-        <p>
-          Estamos trabajando para ofrecerte más aplicaciones en un futuro cercano, 
-          desarrolladas con las mejores tecnologías para potenciar tu negocio.
-          <br><br><strong>Versión:</strong> En desarrollo  
-          <br><strong>Plataforma:</strong> Web y móvil  
-          <br><strong>Tecnología:</strong> #### + ####
-        </p>
-        <div class="etiquetas">#Innovación #Próximamente</div>
-    
-      </div>
+  <!-- ===== CATÁLOGO ===== -->
+  <section class="catalogo-section">
+    <div class="section-header reveal">
+      <span class="section-label">Nuestras apps</span>
+      <h2 class="section-title">Aplicaciones disponibles</h2>
+      <p class="section-desc">Software probado y listo para implementar en tu negocio desde el primer día.</p>
     </div>
 
-    <a href="index.html" class="btn" style="margin-top: 40px;">Volver al Inicio</a>
-  </main>
+    <div class="catalogo-grid">
 
-  <footer>
-    <p>© 2025 <strong>DavCode Solutions</strong>. Todos los derechos reservados.</p>
-    <p>Desarrollado por <a href="https://wa.me/573107864885" target="_blank">DavCode Solutions</a></p>
+      <!-- ADES -->
+      <article class="app-card reveal">
+        <div class="app-card-img">
+          <img src="img/ades.jpg" alt="Ades — Sistema de Despachos" loading="lazy" />
+        </div>
+        <div class="app-card-body">
+          <h3>Ades — Sistema de Despachos</h3>
+          <p>Solución integral para negocios con poco control en inventario y manejo de despachos. Ideal para restaurantes, tiendas, farmacias, panaderías y empresas de logística. Administra insumos, pedidos, clientes, vendedores, menú, cuadre de caja y despachos de forma centralizada.</p>
+          <div class="app-card-meta">
+            <strong>Versión:</strong> 1.0 &nbsp;|&nbsp;
+            <strong>Plataforma:</strong> Escritorio &nbsp;|&nbsp;
+            <strong>Tech:</strong> Java + JavaFX
+          </div>
+          <div class="app-tags">
+            <span class="app-tag">#Gestión</span>
+            <span class="app-tag">#Pedidos</span>
+            <span class="app-tag">#Inventario</span>
+            <span class="app-tag">#Restaurantes</span>
+          </div>
+        </div>
+        <div class="app-card-footer">
+          <a href="https://wa.me/573107864885?text=Hola%20quiero%20una%20demo%20gratuita%20del%20sistema%20ADES"
+             target="_blank" rel="noopener" class="btn btn-primary">
+            Obtén tu demo gratuita
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Próximamente -->
+      <article class="app-card reveal reveal-delay-1">
+        <div class="app-card-img">
+          <img src="img/futuro.jpg" alt="Próximas aplicaciones" loading="lazy" />
+          <span class="soon-badge">Próximamente</span>
+        </div>
+        <div class="app-card-body">
+          <h3>Próximamente más aplicaciones</h3>
+          <p>Estamos trabajando para ofrecerte más aplicaciones desarrolladas con las mejores tecnologías del mercado para potenciar tu negocio.</p>
+          <div class="app-card-meta">
+            <strong>Estado:</strong> En desarrollo &nbsp;|&nbsp;
+            <strong>Plataforma:</strong> Web y móvil
+          </div>
+          <div class="app-tags">
+            <span class="app-tag">#Innovación</span>
+            <span class="app-tag">#Próximamente</span>
+          </div>
+        </div>
+        <div class="app-card-footer">
+          <a href="contacto.html" class="btn btn-outline" style="color:var(--purple);border-color:var(--purple);">
+            Notifícame cuando esté lista
+          </a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">Davora <span>Tecnologies</span></div>
+      <p class="footer-copy">© 2025 Davora Tecnologies. Todos los derechos reservados.</p>
+      <div class="footer-links">
+        <a href="contacto.html">Contacto</a>
+        <a href="sobre-mi.html">Sobre nosotros</a>
+        <a href="contrato.html">Contrato</a>
+      </div>
+    </div>
   </footer>
+
+  <!-- ===== CHATBOT ===== -->
+  <div class="chatbot-container" id="chatbot" role="dialog" aria-label="Chat DavBot" aria-hidden="true">
+    <div class="chatbot-header">
+      <div class="chatbot-header-info">
+        <div class="chatbot-avatar">🤖</div>
+        <div><h3>DavBot</h3><span class="chatbot-status">En línea</span></div>
+      </div>
+      <button id="closeChat" aria-label="Cerrar chat">&times;</button>
+    </div>
+    <div class="chatbot-body" id="chatBody">
+      <p class="bot-text">¡Hola! 👋 Soy <b>DavBot</b> de Davora. ¿En qué puedo ayudarte hoy?</p>
+      <div class="options">
+        <button class="option-btn">¿Por qué comprar con Davora Software?</button>
+        <button class="option-btn">¿Cuánto tarda un desarrollo?</button>
+        <button class="option-btn">¿Qué tipos de software hacen?</button>
+        <button class="option-btn">¿Puedo solicitar una demo?</button>
+      </div>
+    </div>
+  </div>
+  <button class="chat-toggle" id="openChat" aria-label="Abrir chat">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+  </button>
+  <a href="https://wa.me/573107864885" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+    <img src="img/whatsapp.png" alt="" class="whatsapp-icon" aria-hidden="true" />
+  </a>
+
 </body>
 </html>

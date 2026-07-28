@@ -1,0 +1,67 @@
+/* =====================================================
+   sobre-mi.css — Estilos exclusivos de sobre-mi.html
+   ===================================================== */
+
+/* ===== HERO ===== */
+.page-hero { background-image: url('../img/tecnologia.png'); }
+
+/* ===== HISTORIA ===== */
+.sobre-section {
+  padding: 100px 40px;
+  background: var(--white);
+}
+.sobre-inner {
+  max-width: 900px; margin: 0 auto; text-align: center;
+}
+.sobre-text {
+  font-size: 1.05em; color: var(--gray-600);
+  line-height: 1.8; max-width: 780px;
+  margin: 0 auto 60px;
+}
+
+/* ===== VALORES ===== */
+.valores-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px; margin: 48px 0 60px; text-align: left;
+}
+.valor-card {
+  background: var(--gray-100);
+  border: 1px solid rgba(168,85,247,.1);
+  border-radius: var(--radius-md);
+  padding: 28px 24px;
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+.valor-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(168,85,247,.15);
+  border-color: rgba(168,85,247,.3);
+}
+.valor-icon { font-size: 2em; margin-bottom: 12px; }
+.valor-card h3 { font-size: 1em; font-weight: 700; color: var(--purple); margin-bottom: 8px; }
+.valor-card p  { font-size: .9em; color: var(--gray-600); line-height: 1.6; }
+
+/* ===== CTA STRIP ===== */
+.sobre-cta {
+  background: linear-gradient(135deg, var(--dark-1), var(--dark-2));
+  padding: 80px 40px; text-align: center; color: var(--white);
+}
+.sobre-cta h2 {
+  font-size: clamp(1.5em,3vw,2.2em); font-weight: 800;
+  margin-bottom: 14px; color: var(--purple-light);
+}
+.sobre-cta p {
+  color: rgba(255,255,255,.65); margin-bottom: 32px;
+  font-size: 1.05em; max-width: 540px;
+  margin-left: auto; margin-right: auto;
+}
+
+/* ===== RESPONSIVE SOBRE-MI ===== */
+@media (max-width: 768px) {
+  .sobre-section { padding: 70px 20px; }
+  .valores-grid  { grid-template-columns: 1fr 1fr; }
+  .sobre-cta     { padding: 60px 20px; }
+}
+@media (max-width: 480px) {
+  .valores-grid { grid-template-columns: 1fr; }
+}

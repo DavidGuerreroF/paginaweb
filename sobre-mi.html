@@ -3,137 +3,261 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sobre Nosotros - Davora</title>
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="icon" href="img/favicon.png" type="image/x-icon">
+  <meta name="description" content="Conoce la historia y valores de Davora Tecnologies, tu aliado estratégico en tecnología." />
+  <link rel="icon" href="img/favicon.png" type="image/x-icon" />
+  <title>Sobre Nosotros — Davora Tecnologies</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/sobre-mi.css" />
+  <script defer src="js/script.js"></script>
   <style>
-    main {
-      padding: 100px 40px;
-      max-width: 900px;
-      margin: auto;
-      text-align: center;
-      color: #333;
-    }
-
-    main h1 {
-      color: #1abc9c;
-      font-size: 2.2em;
-      margin-bottom: 20px;
-    }
-
-    main h2 {
-      color: #1abc9c;
-      font-size: 1.8em;
-      margin-top: 50px;
-      margin-bottom: 20px;
-    }
-
-    .portada {
-      width: 100%;
-      height: auto;
-      border-radius: 12px;
-      margin-bottom: 25px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-      object-fit: cover;
-    }
-
-    .valores {
+    /* ── Página interna compartida ── */
+    .page-hero {
+      background: url('img/tecnologia.png') center/cover no-repeat;
+      min-height: 52vh;
+      position: relative;
       display: flex;
-      flex-wrap: wrap;
+      align-items: center;
       justify-content: center;
-      gap: 25px;
-      margin: 40px 0;
-    }
-
-    .valor {
-      background: #f9f9f9;
-      border-radius: 12px;
-      padding: 25px;
-      width: 260px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-      transition: transform 0.3s ease;
-    }
-
-    .valor:hover {
-      transform: translateY(-5px);
-    }
-
-    .valor h3 {
-      color: #1abc9c;
-      margin-bottom: 10px;
-    }
-
-    .btn {
-      display: inline-block;
-      margin-top: 30px;
-      padding: 12px 30px;
-      background: #1abc9c;
+      text-align: center;
       color: #fff;
-      text-decoration: none;
-      border-radius: 25px;
-      transition: background 0.3s ease;
+      margin-top: var(--header-h);
     }
+    .page-hero .hero-overlay {
+      background: linear-gradient(135deg, rgba(13,13,26,.82), rgba(124,58,237,.28));
+    }
+    .page-hero .hero-content { position: relative; z-index: 2; padding: 0 24px; }
+    .page-hero .hero-title   { font-size: clamp(1.8em,4vw,3em); font-weight: 900; letter-spacing: -1px; margin-bottom: 14px; }
+    .page-hero .hero-subtitle{ font-size: clamp(.95em,1.6vw,1.15em); color: rgba(255,255,255,.8); max-width: 580px; margin: 0 auto; }
 
-    .btn:hover {
-      background: #17a589;
+    /* ── Sobre nosotros content ── */
+    .sobre-section {
+      padding: 100px 40px;
+      background: #fff;
+    }
+    .sobre-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .sobre-inner .section-label { color: var(--purple); }
+    .sobre-inner .section-title { color: var(--text-dark); margin-bottom: 20px; }
+    .sobre-text {
+      font-size: 1.05em;
+      color: var(--gray-600);
+      line-height: 1.8;
+      max-width: 780px;
+      margin: 0 auto 60px;
+    }
+    .sobre-text + .sobre-text { margin-top: -30px; }
+
+    /* Valores */
+    .valores-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+      margin: 48px 0 60px;
+      text-align: left;
+    }
+    .valor-card {
+      background: var(--gray-100);
+      border: 1px solid rgba(168,85,247,.1);
+      border-radius: var(--radius-md);
+      padding: 28px 24px;
+      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+    }
+    .valor-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 32px rgba(168,85,247,.15);
+      border-color: rgba(168,85,247,.3);
+    }
+    .valor-icon { font-size: 2em; margin-bottom: 12px; }
+    .valor-card h3 { font-size: 1em; font-weight: 700; color: var(--purple); margin-bottom: 8px; }
+    .valor-card p  { font-size: .9em; color: var(--gray-600); line-height: 1.6; }
+
+    /* CTA strip */
+    .sobre-cta {
+      background: linear-gradient(135deg, var(--dark-1), var(--dark-2));
+      padding: 80px 40px;
+      text-align: center;
+      color: #fff;
+    }
+    .sobre-cta h2 { font-size: clamp(1.5em,3vw,2.2em); font-weight: 800; margin-bottom: 14px; color: var(--purple-light); }
+    .sobre-cta p  { color: rgba(255,255,255,.65); margin-bottom: 32px; font-size: 1.05em; max-width: 540px; margin-left: auto; margin-right: auto; }
+
+    @media(max-width:768px){
+      .sobre-section { padding: 70px 20px; }
+      .valores-grid  { grid-template-columns: 1fr 1fr; }
+      .sobre-cta     { padding: 60px 20px; }
+    }
+    @media(max-width:480px){
+      .valores-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
-  <header class="header">
+
+  <!-- ===== SIDEBAR ===== -->
+  <aside class="sidebar" id="sidebar" aria-label="Menú lateral">
+    <div class="sidebar-logo">Davora <span>T.</span></div>
+    <nav class="sidebar-nav">
+      <a href="index.html#inicio" class="sidebar-link">
+        <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <span class="sidebar-text">Inicio</span>
+      </a>
+      <a href="index.html#servicios" class="sidebar-link">
+        <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 010 14.14M4.93 4.93a10 10 0 000 14.14"/></svg>
+        <span class="sidebar-text">Servicios</span>
+      </a>
+      <a href="index.html#tecnologias" class="sidebar-link">
+        <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        <span class="sidebar-text">Tecnologías</span>
+      </a>
+      <a href="sobre-mi.html" class="sidebar-link active">
+        <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        <span class="sidebar-text">Sobre nosotros</span>
+      </a>
+      <a href="contacto.html" class="sidebar-link">
+        <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.18 1.18 2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.09a16 16 0 006 6l.46-.46a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        <span class="sidebar-text">Contacto</span>
+      </a>
+    </nav>
+  </aside>
+
+  <!-- ===== HEADER ===== -->
+  <header class="header" id="header">
     <nav class="navbar">
-      <div class="logo">Davora Tecnologies</div>
+      <div class="navbar-brand">
+        <button class="sidebar-toggle" id="sidebarToggle" aria-label="Abrir menú">
+          <span></span><span></span><span></span>
+        </button>
+        <a href="index.html" class="logo">Davora <span>Tecnologies</span></a>
+      </div>
       <ul class="nav-links">
-        <li><a href="index.html">Inicio</a></li>
+        <li><a href="index.html#inicio">Inicio</a></li>
+        <li><a href="index.html#servicios">Servicios</a></li>
+        <li><a href="index.html#tecnologias">Tecnologías</a></li>
+        <li><a href="sobre-mi.html" class="active-link">Sobre nosotros</a></li>
+        <li><a href="contacto.html" class="nav-cta">Contacto</a></li>
       </ul>
     </nav>
   </header>
 
-  <main>
-    <!-- Nuestra Historia -->
-    <h1>Nuestra Historia</h1>
+  <!-- ===== HERO ===== -->
+  <section class="page-hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-badge"><span class="badge-dot"></span>Quiénes somos</div>
+      <h1 class="hero-title">Nuestra Historia</h1>
+      <p class="hero-subtitle">Un equipo apasionado por convertir ideas en soluciones tecnológicas reales.</p>
+    </div>
+  </section>
 
-    <!-- Imagen profesional -->
-    <img src="img/tecnologia.png" alt="Soluciones de software confiables" class="portada" />
-
-    <p>
-      Davora nace con una visión clara: transformar ideas en soluciones tecnológicas que potencien el crecimiento de negocios de todo tipo. 
-      Nuestro objetivo es apoyar a empresas y emprendedores que buscan salir adelante, optimizar procesos y alcanzar nuevas oportunidades, incluso cuando el capital es limitado.
-      <br><br>
-      Guiados por la pasión por la innovación y el conocimiento en las tecnologías más modernas, cada proyecto que desarrollamos está diseñado para simplificar operaciones, mejorar la experiencia de tus clientes y generar valor real a largo plazo.
-      <br><br>
-      Con DavCode Solutions no solo obtienes software, sino un aliado estratégico comprometido con tu éxito, brindando soporte constante, soluciones seguras y acompañamiento en cada etapa del crecimiento de tu negocio.
-    </p>
-
-    <!-- Por qué Confiar en Nosotros -->
-    <h2>¿Por qué Confiar en Nosotros?</h2>
-
-    <div class="valores">
-      <div class="valor">
-        <h3>💼 Transparencia Total</h3>
-        <p>Todos los proyectos incluyen documentación, manual de uso y contrato digital. Siempre tendrás acceso al software adquirido y su versión firmada digitalmente.</p>
+  <!-- ===== HISTORIA ===== -->
+  <section class="sobre-section">
+    <div class="sobre-inner">
+      <div class="reveal">
+        <span class="section-label">Davora Tecnologies</span>
+        <h2 class="section-title">De la idea al software</h2>
+        <p class="sobre-text">
+          Davora nace con una visión clara: transformar ideas en soluciones tecnológicas que potencien el
+          crecimiento de negocios de todo tipo. Nuestro objetivo es apoyar a empresas y emprendedores que
+          buscan optimizar procesos y alcanzar nuevas oportunidades, incluso cuando el capital es limitado.
+        </p>
+        <p class="sobre-text">
+          Con Davora no solo obtienes software, sino un aliado estratégico comprometido con tu éxito,
+          brindando soporte constante, soluciones seguras y acompañamiento en cada etapa del crecimiento
+          de tu negocio.
+        </p>
       </div>
-      <div class="valor">
-        <h3>🔒 Confianza y Seguridad</h3>
-        <p>Pagos y entregas mediante canales seguros. Cada licencia o software incluye un documento de autenticidad y respaldo técnico personalizado.</p>
+
+      <!-- Valores -->
+      <div class="reveal">
+        <span class="section-label">Nuestros pilares</span>
+        <h2 class="section-title">¿Por qué confiar en nosotros?</h2>
       </div>
-      <div class="valor">
-        <h3>🧠 Experiencia Técnica</h3>
-        <p>Desarrollamos con tecnologías modernas como <strong>Java, Python y JavaScript</strong>, garantizando estabilidad, soporte multiplataforma y crecimiento a largo plazo.</p>
+      <div class="valores-grid">
+        <div class="valor-card reveal">
+          <div class="valor-icon">💼</div>
+          <h3>Transparencia Total</h3>
+          <p>Todos los proyectos incluyen documentación, manual de uso y contrato digital. Siempre tendrás acceso al software adquirido.</p>
+        </div>
+        <div class="valor-card reveal reveal-delay-1">
+          <div class="valor-icon">🔒</div>
+          <h3>Confianza y Seguridad</h3>
+          <p>Pagos y entregas mediante canales seguros. Cada licencia incluye un documento de autenticidad y respaldo técnico.</p>
+        </div>
+        <div class="valor-card reveal reveal-delay-2">
+          <div class="valor-icon">🧠</div>
+          <h3>Experiencia Técnica</h3>
+          <p>Desarrollamos con tecnologías modernas como Java, Python y JavaScript, garantizando estabilidad y escalabilidad.</p>
+        </div>
+        <div class="valor-card reveal reveal-delay-3">
+          <div class="valor-icon">🤝</div>
+          <h3>Compromiso Real</h3>
+          <p>Tu confianza es nuestra prioridad. Acompañamos la implementación y ayudamos a que tu negocio crezca de forma sostenible.</p>
+        </div>
       </div>
-      <div class="valor">
-        <h3>🤝 Compromiso Real</h3>
-        <p>Tu confianza es nuestra prioridad. No solo entregamos software, sino que acompañamos su implementación y ayudamos a que tu negocio crezca de manera sostenible.</p>
+
+      <p class="sobre-text reveal">
+        En <strong>Davora</strong> creemos que la confianza se gana con hechos. Cada entrega se realiza con
+        <strong>acuerdo contractual como garantía</strong>, asegurando que el software adquirido sea tuyo de
+        forma legítima y permanente.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="sobre-cta">
+    <div class="reveal">
+      <h2>¿Listo para dar el siguiente paso?</h2>
+      <p>Cuéntanos tu idea y construyamos juntos la solución que tu negocio necesita.</p>
+      <a href="contacto.html" class="btn btn-primary">Contáctanos ahora
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">Davora <span>Tecnologies</span></div>
+      <p class="footer-copy">© 2025 Davora Tecnologies. Todos los derechos reservados.</p>
+      <div class="footer-links">
+        <a href="contacto.html">Contacto</a>
+        <a href="sobre-mi.html">Sobre nosotros</a>
+        <a href="contrato.html">Contrato</a>
       </div>
     </div>
+  </footer>
 
-    <p>
-      En <strong>Davora</strong> creemos que la confianza se gana con hechos. Cada entrega se realiza con <strong>acuerdo contractual como garantía</strong>, asegurando que el software adquirido sea tuyo de forma legítima y permanente.
-      <br><br>
-      <em>Trabajamos para que la tecnología sea una herramienta segura, confiable y estratégica que impulse el futuro de tu negocio.</em>
-    </p>
+  <!-- ===== CHATBOT ===== -->
+  <div class="chatbot-container" id="chatbot" role="dialog" aria-label="Chat DavBot" aria-hidden="true">
+    <div class="chatbot-header">
+      <div class="chatbot-header-info">
+        <div class="chatbot-avatar">🤖</div>
+        <div><h3>DavBot</h3><span class="chatbot-status">En línea</span></div>
+      </div>
+      <button id="closeChat" aria-label="Cerrar chat">&times;</button>
+    </div>
+    <div class="chatbot-body" id="chatBody">
+      <p class="bot-text">¡Hola! 👋 Soy <b>DavBot</b> de Davora. ¿En qué puedo ayudarte hoy?</p>
+      <div class="options">
+        <button class="option-btn">¿Por qué comprar con Davora Software?</button>
+        <button class="option-btn">¿Cuánto tarda un desarrollo?</button>
+        <button class="option-btn">¿Qué tipos de software hacen?</button>
+        <button class="option-btn">¿Puedo solicitar una demo?</button>
+      </div>
+    </div>
+  </div>
+  <button class="chat-toggle" id="openChat" aria-label="Abrir chat">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+  </button>
+  <a href="https://wa.me/573107864885" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+    <img src="img/whatsapp.png" alt="" class="whatsapp-icon" aria-hidden="true" />
+  </a>
 
-    <a href="index.html" class="btn">Volver al Inicio</a>
-  </main>
 </body>
 </html>
